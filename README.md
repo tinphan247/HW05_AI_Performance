@@ -77,16 +77,14 @@ git clone https://github.com/ttbhanh/eshop-sut.git sut/eshop-sut
 cd sut/eshop-sut/backend
 npm ci
 
-# 3. Seed original database
-node database.js
-
-# 4. Seed performance data (500 users + 200 products; script to be added)
-# node ../../../scripts/seed_perf_data.js
-
-# 5. Start backend (port 3000)
+# 3. Start backend (port 3000). Important: server start DROPs and reseeds the DB.
 node server.js
 
-# 6. Run a scenario (example; test plan not created yet)
+# 4. Wait for "Server is running on http://localhost:3000", then seed performance data.
+python ..\..\..\scripts\seed_perf_data.py
+python ..\..\..\scripts\generate_csv.py
+
+# 5. Run a scenario (example; test plans not created yet)
 # apache-jmeter-5.6.3\bin\jmeter.bat -n -t test-plans\...jmx -l results\...jtl -e -o reports\...\html
 ```
 

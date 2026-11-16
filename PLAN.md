@@ -89,6 +89,7 @@ Các điểm dưới đây được kiểm tra từ bản clone `HW2/eshop-sut` 
 | Product detail | Với id chẵn, `price` bị đổi thành string | Assertion không được yêu cầu price là number |
 | Tài liệu setup | Ghi admin password `admin123`, nhưng seed là `Admin123!` | Dùng password seed thật; ghi lại mismatch nếu cần |
 | Dữ liệu mặc định | 2 users, 5 products, 3 categories, 4 coupons, 0 orders | Sau `node database.js` |
+| **Startup behavior** | Mỗi lần `node server.js`, `database.js` được load và **DROP + seed lại toàn bộ DB** | `database.js` gọi `initDatabase()`; đã kiểm chứng: seed trước khi start bị xóa |
 
 **Kết luận Fact-check:** phải dùng **clean clone** của repo chính thức, chạy **port 3000**, seed lại DB, và ghi rõ commit/hash. Bản local 3001 chỉ là bản thí nghiệm của HW2, không dùng làm SUT cho HW05.
 
@@ -410,20 +411,25 @@ Chỉ ghi “AI đã sai” khi có output thật; nếu AI làm đúng, ghi “
 
 ### 4.2. Reset và seed trước mỗi scenario
 
+> **Phát hiện quan trọng (đã kiểm chứng):** `server.js` `require("./database")`, và `database.js` gọi `initDatabase()` ngay khi được load. Vì vậy **mỗi lần khởi động backend, toàn bộ DB bị DROP và seed lại** (2 users, 5 products, 0 orders). Nếu seed trước rồi mới start server, dữ liệu seed sẽ bị xóa. **Phải start backend trước, đợi server listen, rồi mới seed.**
+
 **Reset đầy đủ (khuyến nghị trước mỗi scenario chính):**
 
 ```powershell
-# 1. Dừng JMeter, dừng backend (Ctrl+C)
-# 2. Reset DB + seed gốc
+# 1. Dừng JMeter, dừng backend cũ (Ctrl+C)
+# 2. Khởi động backend; server tự DROP + seed DB gốc
 cd C:\HCMUS\hk7\Testing\hw5\sut\eshop-sut\backend
-node database.js
-
-# 3. Seed dữ liệu perf
-node C:\HCMUS\hk7\Testing\hw5\scripts\seed_perf_data.js
-
-# 4. Khởi động lại backend
 node server.js
+# 3. Đợi log "Server is running on http://localhost:3000"
+# 4. Seed dữ liệu perf KHI SERVER ĐANG CHẠY
+python C:\HCMUS\hk7\Testing\hw5\scripts\seed_perf_data.py
+# 5. Sinh/refresh CSV từ DB vừa seed (nếu cần)
+python C:\HCMUS\hk7\Testing\hw5\scripts\generate_csv.py
 ```
+
+- **Không** chạy `node database.js` trước `node server.js` với hy vọng giữ dữ liệu; server start sẽ reset lần nữa.
+- Seed script kết nối SQLite trực tiếp trong khi server chạy; SQLite cho phép đọc/ghi đồng thời ở mức này. Nếu gặp `database is locked`, dừng seed, kiểm tra tiến trình backend, rồi chạy lại.
+- Nếu cần reset sạch DB mà không đổi code: dừng backend → start lại (auto reset) → seed lại.
 
 **Reset riêng lockout (giữa các run, không cần reset DB):**
 
@@ -1004,6 +1010,7 @@ Nội dung:
 | Lockout do login sai | Cao nếu không tách | Account bị khóa, error% sai | Dùng Lockout Probe riêng; reset sau mỗi run |
 | Port 3000 bị chiếm | Trung bình | Không chạy được | Preflight `netstat`; kill process cũ; không đổi port tùy tiện |
 | Dataset drift | Cao | So sánh sai | Reset + seed cố định trước mỗi run; ghi counts |
+| **Server start tự DROP/seed lại DB** | Chắc chắn | Seed trước sẽ mất sạch | Start backend trước → đợi listen → seed → verify counts; ghi vào manifest |
 | JTL/HTML quá lớn | Trung bình | Repo/zip nặng | CSV JTL; HTML gọn; kiểm tra dung lượng; LFS nếu cần |
 | AI bịa metric/threshold | Cao | Mất điểm Task 2 | Script kiểm tra độc lập; trích dòng JTL; không tin AI |
 | Video không đạt 6 phút/không có giọng | Trung bình | Mất điểm | Quay sớm, script narration, kiểm tra thời lượng và link |

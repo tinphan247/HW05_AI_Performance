@@ -78,6 +78,29 @@ Database counts after `node database.js`:
 
 The backend process was stopped after the smoke check.
 
+### 4.1. Critical startup behavior (found during setup)
+
+`server.js` requires `./database`, and `database.js` calls `initDatabase()` immediately at module load. Therefore **every backend start drops and reseeds the database**. A seed performed *before* starting the backend is lost.
+
+Verified sequence that works:
+
+```text
+start backend (auto reset: 2 users / 5 products / 0 orders)
+-> wait until listening on port 3000
+-> run scripts/seed_perf_data.py while backend is running
+-> verify 503 users / 205 products / 0 orders
+```
+
+Verified seed counts after running the seed script against the live backend:
+
+| Table | Count |
+|---|---:|
+| users | 503 (2 seed + 500 perf + 1 lockout) |
+| products | 205 (5 seed + 200 perf) |
+| orders | 0 |
+
+A smoke E2E check on `perf001@eshop.test` succeeded: login → cart → checkout (`orderId=1`) → my-orders (1). The state was then reset and the backend stopped.
+
 ## 5. Source-level facts relevant to test design
 
 | Fact | Evidence |
