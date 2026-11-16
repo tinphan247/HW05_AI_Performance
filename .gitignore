@@ -1,0 +1,7 @@
+sut/
+node_modules/
+*.tmp
+*.bak
+experiments/tmp/
+.env
+2026.HW05.Performance Testing_En.pdf
