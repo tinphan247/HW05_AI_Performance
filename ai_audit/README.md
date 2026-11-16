@@ -21,6 +21,7 @@
 |---|---|---|---|
 | 001 | 2026-11-16 12:00 ICT | Read HW05 PDF, analyse requirements, write implementation plan, ask clarification questions | `entries/001_planning.md` |
 | 002 | 2026-11-16 12:04 ICT | Apply student's answers; preflight, clean SUT clone, seed/reset/CSV scripts | `entries/002_setup.md` |
+| 003 | 2026-11-16 12:20 ICT | Generate 3 JMX plans + runner/monitor/analysis; pilot validation and fixes | `entries/003_jmx.md` |
 
 ## Rules
 

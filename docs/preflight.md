@@ -39,7 +39,7 @@
 | Local path | `hw5/sut/eshop-sut` (git-ignored) |
 | Commit | `85af3ba875c88283615e22cb108f13e2fccaf0e9` |
 | Working tree | Clean official clone (no local modifications) |
-| Backend port | **3000** (`const PORT = 3000;`) |
+| Backend port | **3100** for this test harness (official default is 3000; see `docs/sut_port_patch.md`) |
 | Dependencies | `npm ci` completed: 135 packages |
 
 ## 4. Backend smoke check
@@ -57,13 +57,13 @@ Observed:
 ```text
 Database initialized and seeded (Phase 2).
 Connected to database
-Server is running on http://localhost:3000
+Server is running on http://localhost:3100
 ```
 
 HTTP check:
 
 ```text
-GET http://localhost:3000/api/products -> HTTP 200, body length 914 bytes
+GET http://localhost:3100/api/products -> HTTP 200, body length 914 bytes
 ```
 
 Database counts after `node database.js`:
@@ -86,7 +86,7 @@ Verified sequence that works:
 
 ```text
 start backend (auto reset: 2 users / 5 products / 0 orders)
--> wait until listening on port 3000
+-> wait until listening on port 3100
 -> run scripts/seed_perf_data.py while backend is running
 -> verify 503 users / 205 products / 0 orders
 ```

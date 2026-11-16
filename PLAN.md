@@ -76,6 +76,7 @@ Các điểm dưới đây được kiểm tra từ bản clone `HW2/eshop-sut` 
 | Repo chính thức | `https://github.com/ttbhanh/eshop-sut` | README SUT |
 | Commit local hiện tại | `85af3ba875c88283615e22cb108f13e2fccaf0e9` | `git rev-parse HEAD`; phải `git fetch` và ghi lại commit thật khi chạy |
 | Port backend chính thức | **3000** (`const PORT = 3000;`) | `git show HEAD:backend/server.js` |
+| Port dùng cho HW05 | **3100** (`const PORT = process.env.PORT \|\| 3100;`) | Máy đã có backend Aptis chạy port 3000; patch chỉ đổi port, không đổi logic — xem `docs/sut_port_patch.md` |
 | Port bản local HW2 | 3001 (`process.env.PORT || 3001`) | Bản local đã bị sửa; **không dùng** cho HW05 |
 | Seed users | `admin@eshop.com` / `Admin123!` (admin), `test@eshop.com` / `Test1234!` (user) | `backend/database.js` |
 | Seed products | 5 sản phẩm | `backend/database.js` |
@@ -91,7 +92,7 @@ Các điểm dưới đây được kiểm tra từ bản clone `HW2/eshop-sut` 
 | Dữ liệu mặc định | 2 users, 5 products, 3 categories, 4 coupons, 0 orders | Sau `node database.js` |
 | **Startup behavior** | Mỗi lần `node server.js`, `database.js` được load và **DROP + seed lại toàn bộ DB** | `database.js` gọi `initDatabase()`; đã kiểm chứng: seed trước khi start bị xóa |
 
-**Kết luận Fact-check:** phải dùng **clean clone** của repo chính thức, chạy **port 3000**, seed lại DB, và ghi rõ commit/hash. Bản local 3001 chỉ là bản thí nghiệm của HW2, không dùng làm SUT cho HW05.
+**Kết luận Fact-check:** phải dùng **clean clone** của repo chính thức, chạy **port 3100** (official default là 3000; local patch đổi port để không đụng backend Aptis), seed lại DB, và ghi rõ commit/hash. Bản local 3001 chỉ là bản thí nghiệm của HW2, không dùng làm SUT cho HW05.
 
 ### 1.4. Các điểm chưa xác định — không tự bịa
 
@@ -212,8 +213,8 @@ perf002@eshop.test,Perf1234!,2,Samsung Galaxy S24 Ultra,28000000,1,Galaxy,456 Le
 | Thành phần | Giá trị |
 |---|---|
 | JMeter | Apache JMeter 5.6.3, JDK 17 |
-| Base URL | `http://localhost:3000` |
-| HTTP Request Defaults | protocol `http`, server `localhost`, port `3000`, encoding `UTF-8` |
+| Base URL | `http://localhost:3100` |
+| HTTP Request Defaults | protocol `http`, server `localhost`, port `3100` (property `${__P(port,3100)}`), encoding `UTF-8` |
 | Header Manager | `Content-Type: application/json`; các request cần auth thêm `Authorization: Bearer ${token}` |
 | JSON Extractor | Login: `$.token`, default `TOKEN_NOT_FOUND`, fail nếu không có |
 | Assertions | Response Code đúng; JSON body chứa `token` / `orderId`; không có `error` bất ngờ |
@@ -381,7 +382,7 @@ Thread Group: Lockout_Probe (1 thread, 1 loop)
 - Bỏ qua lockout: dùng sai mật khẩu trong workflow chính → account bị khóa.
 - CSV sharing mode sai → tất cả VU dùng cùng account.
 - Đặt View Results Tree live trong Stress/Spike → client bottleneck.
-- Nhầm port 3000/3001 hoặc dùng bản SUT đã bị sửa.
+- Nhầm port 3100/3000/3001 hoặc dùng bản SUT đã bị sửa.
 - Không tách negative test khỏi error% chính.
 - Không reset DB/lockout giữa các run.
 
@@ -395,12 +396,12 @@ Chỉ ghi “AI đã sai” khi có output thật; nếu AI làm đúng, ghi “
 
 - [ ] Clone sạch: `git clone https://github.com/ttbhanh/eshop-sut.git sut/eshop-sut`
 - [ ] Ghi commit: `git -C sut/eshop-sut rev-parse HEAD` → `docs/sut_commit.txt`
-- [ ] Kiểm tra port 3000 trống: `netstat -ano | findstr :3000`
+- [ ] Kiểm tra port 3100 trống (3000 đang dùng cho Aptis): `netstat -ano | findstr :3100`
 - [ ] `cd sut/eshop-sut/backend && npm ci`
 - [ ] `node database.js` (reset + seed gốc)
-- [ ] `node ../../../scripts/seed_perf_data.js` (seed 500 users + 200 products)
-- [ ] `node server.js` → log “Server is running on http://localhost:3000”
-- [ ] `curl http://localhost:3000/api/products` → 200
+- [ ] `python scripts/seed_perf_data.py` (seed 500 users + 200 products, chạy sau khi server listen)
+- [ ] `node server.js` → log “Server is running on http://localhost:3100”
+- [ ] `curl http://localhost:3100/api/products` → 200
 - [ ] Login thử `test@eshop.com / Test1234!` → có token
 - [ ] Kiểm tra JMeter: `apache-jmeter-5.6.3\bin\jmeter.bat -v`
 - [ ] Kiểm tra Java 17, Node, Python, psutil
@@ -420,7 +421,7 @@ Chỉ ghi “AI đã sai” khi có output thật; nếu AI làm đúng, ghi “
 # 2. Khởi động backend; server tự DROP + seed DB gốc
 cd C:\HCMUS\hk7\Testing\hw5\sut\eshop-sut\backend
 node server.js
-# 3. Đợi log "Server is running on http://localhost:3000"
+# 3. Đợi log "Server is running on http://localhost:3100"
 # 4. Seed dữ liệu perf KHI SERVER ĐANG CHẠY
 python C:\HCMUS\hk7\Testing\hw5\scripts\seed_perf_data.py
 # 5. Sinh/refresh CSV từ DB vừa seed (nếu cần)
@@ -492,7 +493,7 @@ apache-jmeter-5.6.3\bin\jmeter.bat -n `
 **Script `scripts/collect_resources.py`:**
 
 - Dùng `psutil` (đã có, v7.1.3) lấy:
-  - PID backend từ port 3000 (`psutil.net_connections` hoặc `Get-NetTCPConnection`).
+  - PID backend từ port 3100 (`psutil.net_connections` hoặc `Get-NetTCPConnection`).
   - `cpu_percent`, `memory_info().rss`, `memory_info().vms`, `num_threads`, `io_counters`, `connections`.
   - System CPU, RAM available, disk I/O, network I/O.
 - Ghi CSV mỗi 2 giây: `timestamp,pid,cpu_percent,rss_mb,vms_mb,threads,read_bytes,write_bytes,sys_cpu,sys_ram_available_mb`.
@@ -581,7 +582,7 @@ Template issue:
 ```markdown
 ## Môi trường
 - SUT commit: <hash>
-- Backend: Node <version>, port 3000, Windows 11
+- Backend: Node <version>, port 3100, Windows 11
 - Dataset: users=..., products=..., orders=...
 - Scenario: Load/Stress/Spike/Endurance, VUs=..., duration=...
 
@@ -1008,7 +1009,7 @@ Nội dung:
 | JMeter và backend cùng máy → client bottleneck | Cao | Kết quả sai | Theo dõi CPU JMeter; nếu > 85%, giảm tải hoặc dùng máy thứ hai; ghi threat to validity |
 | SQLite lock khi checkout đồng thời | Trung bình | Lỗi 500/DB locked | Đo và report; reset DB; thử WAL trên bản copy để so sánh |
 | Lockout do login sai | Cao nếu không tách | Account bị khóa, error% sai | Dùng Lockout Probe riêng; reset sau mỗi run |
-| Port 3000 bị chiếm | Trung bình | Không chạy được | Preflight `netstat`; kill process cũ; không đổi port tùy tiện |
+| Port 3100 bị chiếm | Trung bình | Không chạy được | Preflight `netstat`; kill process cũ; nếu buộc đổi port thì ghi lại và dùng đúng port đã ghi |
 | Dataset drift | Cao | So sánh sai | Reset + seed cố định trước mỗi run; ghi counts |
 | **Server start tự DROP/seed lại DB** | Chắc chắn | Seed trước sẽ mất sạch | Start backend trước → đợi listen → seed → verify counts; ghi vào manifest |
 | JTL/HTML quá lớn | Trung bình | Repo/zip nặng | CSV JTL; HTML gọn; kiểm tra dung lượng; LFS nếu cần |
