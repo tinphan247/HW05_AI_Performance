@@ -1,7 +1,7 @@
 ﻿# Git commit log - HW05
 # Repo: https://github.com/tinphan247/HW05_AI_Performance
-# Exported: 2026-11-18 16:23:39 +07:00
-# Commits: 9
+# Exported: 2026-11-18 16:26:37 +07:00
+# Commits: 12
 
 commit c8f2bcaffa232a1bf8d57470da986a31b50134ba
 Author: tinphan247 <leopard147159@gmail.com>
@@ -56,4 +56,22 @@ Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
 Date:   2026-11-18 16:23:35 +0700
 
     fix(evidence): render resource charts as real PNG, add 7-image appendix to report PDF
+
+commit 468c4b8dacd563b699e5b707be9b6ece966a86cc
+Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
+Date:   2026-11-18 16:23:39 +0700
+
+    chore: refresh git commit log
+
+commit 289c6ec4311102c76b5bc3d96a76f24ecdc722ae
+Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
+Date:   2026-11-18 16:24:39 +0700
+
+    docs: state that resource charts are derived from resources.csv
+
+commit d009ec1ee5b230cf308ae5f8fda78ea4579d149a
+Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
+Date:   2026-11-18 16:26:26 +0700
+
+    docs: declare individual submission scope and video status honestly
 
