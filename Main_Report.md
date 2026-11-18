@@ -353,6 +353,9 @@ Ba report view dưới đây là ảnh render từ chính `.jtl` đã nộp bằ
 
 ### A4. Resource monitor - CPU/RSS của backend, JMeter và system
 
+Các biểu đồ dưới đây được vẽ trực tiếp từ `results/<run>/resources.csv` (2 s/sample) bằng
+`scripts/plot_resources.py`, không phải ảnh chụp màn hình Task Manager.
+
 ![Load resources](screenshots/resource/load_resources.png)
 
 ![Stress resources](screenshots/resource/stress_resources.png)
