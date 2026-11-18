@@ -1,0 +1,71 @@
+{
+  "scenario": "endurance",
+  "student_id": "23120372",
+  "hostname": "DESKTOP-BCS88BQ",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "started": "2026-11-18T15:22:30+07:00",
+  "ended": "2026-11-18T15:34:38+07:00",
+  "elapsed_s": 728.39,
+  "jmeter_exit_code": 0,
+  "command": "cmd /c C:\\HCMUS\\hk7\\Testing\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t C:\\HCMUS\\hk7\\Testing\\hw5\\test-plans\\23120372_Endurance_20261118.jmx -l C:\\HCMUS\\hk7\\Testing\\hw5\\results\\endurance_50C\\23120372_Endurance_20261118.jtl -j C:\\HCMUS\\hk7\\Testing\\hw5\\results\\endurance_50C\\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data/e2e_data.csv -Jthreads=80 -Jduration=720 -e -o C:\\HCMUS\\hk7\\Testing\\hw5\\results\\endurance_50C\\html",
+  "plan": "test-plans\\23120372_Endurance_20261118.jmx",
+  "plan_sha256": "94009ca2c60c86e14bda9b7333949924683c09e9981dd5a55ebce768ebe0837c",
+  "jtl": "results\\endurance_50C\\23120372_Endurance_20261118.jtl",
+  "jtl_sha256": "45ff21bdc72be19748df01ddab1a86032f8178bd177420156a8e6539d63062d5",
+  "csv": "data/e2e_data.csv",
+  "csv_sha256": "5ceff8eab0c3b2ceb3ac331241c80b2837f854e6b14d96024ddc1032a4a68edc",
+  "db_counts_before": {
+    "users": 503,
+    "products": 205,
+    "orders": 0
+  },
+  "db_counts_after": {
+    "users": 503,
+    "products": 205,
+    "orders": 3890
+  },
+  "samples": 27388,
+  "failed_samples": 0,
+  "avg_elapsed_ms_all_samples": 5.55,
+  "max_elapsed_ms_all_samples": 92.0,
+  "resources": {
+    "samples": 338,
+    "backend_pid": "28904",
+    "backend_cpu_pct": {
+      "min": 0.0,
+      "max": 28.2,
+      "avg": 13.578106508875738
+    },
+    "backend_rss_mb": {
+      "min": 52.54,
+      "max": 179.84,
+      "avg": 146.0098224852071
+    },
+    "backend_rss_start_mb": 57.95,
+    "backend_rss_end_mb": 178.76,
+    "jmeter_cpu_pct": {
+      "min": 0.0,
+      "max": 162.5,
+      "avg": 6.379881656804734
+    },
+    "jmeter_rss_mb": {
+      "min": 8.18,
+      "max": 791.49,
+      "avg": 510.47133136094675
+    },
+    "sys_cpu_pct": {
+      "min": 15.5,
+      "max": 65.5,
+      "avg": 27.31715976331361
+    },
+    "sys_ram_available_mb": {
+      "min": 2390.57,
+      "max": 3423.43,
+      "avg": 2823.262278106509
+    }
+  },
+  "backend_pid": "28904",
+  "app_git_commit": "fd73e49ebfa7476bd2375bd72f11ebb8fca0b48c",
+  "sut_commit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+  "note": "50% of stress capacity C=160 VUs"
+}

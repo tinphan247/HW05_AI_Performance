@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1794806539798,25,Lockout attempt 1 (expect 401),401,Unauthorized,Lockout Probe (dedicated account) 1-1,text,false,,314,242,1,1,http://localhost:3100/api/login,25,0,18
+1794806541341,3,Lockout attempt 2 (expect 401),401,Unauthorized,Lockout Probe (dedicated account) 1-1,text,false,,314,242,1,1,http://localhost:3100/api/login,3,0,0
+1794806542853,4,Lockout attempt 3 (expect 403),403,Forbidden,Lockout Probe (dedicated account) 1-1,text,false,,342,242,1,1,http://localhost:3100/api/login,4,0,0

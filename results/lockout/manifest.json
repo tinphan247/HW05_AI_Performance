@@ -1,0 +1,71 @@
+{
+  "scenario": "lockout",
+  "student_id": "23120372",
+  "hostname": "DESKTOP-BCS88BQ",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "started": "2026-11-16T12:22:16+07:00",
+  "ended": "2026-11-16T12:22:24+07:00",
+  "elapsed_s": 7.55,
+  "jmeter_exit_code": 0,
+  "command": "cmd /c C:\\HCMUS\\hk7\\Testing\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t C:\\HCMUS\\hk7\\Testing\\hw5\\test-plans\\23120372_Lockout_20261116.jmx -l C:\\HCMUS\\hk7\\Testing\\hw5\\results\\lockout\\23120372_Lockout_20261116.jtl -j C:\\HCMUS\\hk7\\Testing\\hw5\\results\\lockout\\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data/e2e_data.csv",
+  "plan": "test-plans\\23120372_Lockout_20261116.jmx",
+  "plan_sha256": "bc992950b3ad8a67d6609640ab461c56782343eb3cfd09d97623584bf0ede249",
+  "jtl": "results\\lockout\\23120372_Lockout_20261116.jtl",
+  "jtl_sha256": "89aeafd40a29fe34281866dfbdb9cf620357687ceae455aea8c7de34ac6c801b",
+  "csv": "data/e2e_data.csv",
+  "csv_sha256": "5ceff8eab0c3b2ceb3ac331241c80b2837f854e6b14d96024ddc1032a4a68edc",
+  "db_counts_before": {
+    "users": 503,
+    "products": 205,
+    "orders": 0
+  },
+  "db_counts_after": {
+    "users": 503,
+    "products": 205,
+    "orders": 0
+  },
+  "samples": 3,
+  "failed_samples": 3,
+  "avg_elapsed_ms_all_samples": 10.67,
+  "max_elapsed_ms_all_samples": 25.0,
+  "resources": {
+    "samples": 4,
+    "backend_pid": "10440",
+    "backend_cpu_pct": {
+      "min": 0.0,
+      "max": 0.8,
+      "avg": 0.2
+    },
+    "backend_rss_mb": {
+      "min": 53.2,
+      "max": 53.48,
+      "avg": 53.36
+    },
+    "backend_rss_start_mb": 53.48,
+    "backend_rss_end_mb": 53.28,
+    "jmeter_cpu_pct": {
+      "min": 0.0,
+      "max": 9.2,
+      "avg": 2.675
+    },
+    "jmeter_rss_mb": {
+      "min": 8.25,
+      "max": 193.9,
+      "avg": 142.2475
+    },
+    "sys_cpu_pct": {
+      "min": 22.3,
+      "max": 57.6,
+      "avg": 33.875
+    },
+    "sys_ram_available_mb": {
+      "min": 3282.64,
+      "max": 3442.52,
+      "avg": 3327.9775
+    }
+  },
+  "backend_pid": "10440",
+  "app_git_commit": "54dcb5b33521f2adb849805c5090837c3575a8fe",
+  "sut_commit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+  "note": "Dedicated lockout probe; expected 401/401/403"
+}

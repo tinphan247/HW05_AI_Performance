@@ -1,0 +1,71 @@
+{
+  "scenario": "load",
+  "student_id": "23120372",
+  "hostname": "DESKTOP-BCS88BQ",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "started": "2026-11-16T12:22:49+07:00",
+  "ended": "2026-11-16T12:32:54+07:00",
+  "elapsed_s": 605.08,
+  "jmeter_exit_code": 0,
+  "command": "cmd /c C:\\HCMUS\\hk7\\Testing\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t C:\\HCMUS\\hk7\\Testing\\hw5\\test-plans\\23120372_Load_20261116.jmx -l C:\\HCMUS\\hk7\\Testing\\hw5\\results\\load\\23120372_Load_20261116.jtl -j C:\\HCMUS\\hk7\\Testing\\hw5\\results\\load\\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data/e2e_data.csv -Jthreads=30 -Jramp=60 -Jduration=600 -e -o C:\\HCMUS\\hk7\\Testing\\hw5\\results\\load\\html",
+  "plan": "test-plans\\23120372_Load_20261116.jmx",
+  "plan_sha256": "530985258d2e8b0aec1e0a11247a83a5997c3b9c3cd78d32e9f0e8f6e66ac801",
+  "jtl": "results\\load\\23120372_Load_20261116.jtl",
+  "jtl_sha256": "d309472d6a7494d836182031902adb2519a4f571ee3239e95ce6cc72defa9396",
+  "csv": "data/e2e_data.csv",
+  "csv_sha256": "5ceff8eab0c3b2ceb3ac331241c80b2837f854e6b14d96024ddc1032a4a68edc",
+  "db_counts_before": {
+    "users": 503,
+    "products": 205,
+    "orders": 0
+  },
+  "db_counts_after": {
+    "users": 503,
+    "products": 205,
+    "orders": 1196
+  },
+  "samples": 8417,
+  "failed_samples": 0,
+  "avg_elapsed_ms_all_samples": 5.17,
+  "max_elapsed_ms_all_samples": 1619.0,
+  "resources": {
+    "samples": 297,
+    "backend_pid": "4748",
+    "backend_cpu_pct": {
+      "min": 0.0,
+      "max": 9.2,
+      "avg": 3.1215488215488216
+    },
+    "backend_rss_mb": {
+      "min": 48.97,
+      "max": 65.91,
+      "avg": 62.29572390572391
+    },
+    "backend_rss_start_mb": 48.97,
+    "backend_rss_end_mb": 65.55,
+    "jmeter_cpu_pct": {
+      "min": 0.0,
+      "max": 184.7,
+      "avg": 3.10976430976431
+    },
+    "jmeter_rss_mb": {
+      "min": 8.27,
+      "max": 624.1,
+      "avg": 273.24781144781144
+    },
+    "sys_cpu_pct": {
+      "min": 8.1,
+      "max": 56.2,
+      "avg": 21.544444444444444
+    },
+    "sys_ram_available_mb": {
+      "min": 3037.04,
+      "max": 4040.8,
+      "avg": 3766.039023569024
+    }
+  },
+  "backend_pid": "4748",
+  "app_git_commit": "fd73e49ebfa7476bd2375bd72f11ebb8fca0b48c",
+  "sut_commit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+  "note": "Official Load run: 30 VUs, ramp 60 s, duration 600 s, think 2000 +/- 1000 ms"
+}

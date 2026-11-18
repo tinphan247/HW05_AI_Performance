@@ -1,0 +1,71 @@
+{
+  "scenario": "stress",
+  "student_id": "23120372",
+  "hostname": "DESKTOP-BCS88BQ",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "started": "2026-11-18T14:53:43+07:00",
+  "ended": "2026-11-18T15:06:09+07:00",
+  "elapsed_s": 745.76,
+  "jmeter_exit_code": 0,
+  "command": "cmd /c C:\\HCMUS\\hk7\\Testing\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t C:\\HCMUS\\hk7\\Testing\\hw5\\test-plans\\23120372_Stress_20261118.jmx -l C:\\HCMUS\\hk7\\Testing\\hw5\\results\\stress\\23120372_Stress_20261118.jtl -j C:\\HCMUS\\hk7\\Testing\\hw5\\results\\stress\\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data/e2e_data.csv -e -o C:\\HCMUS\\hk7\\Testing\\hw5\\results\\stress\\html",
+  "plan": "test-plans\\23120372_Stress_20261118.jmx",
+  "plan_sha256": "b4f4a87b9514a62674bad70a6ebe2ed1d43959f18d24b597db1915909c2e0bb9",
+  "jtl": "results\\stress\\23120372_Stress_20261118.jtl",
+  "jtl_sha256": "e986c70ac82601bc643e5569cd4dd6d662b41382b84ba5eb59bfa0f87465d9b2",
+  "csv": "data/e2e_data.csv",
+  "csv_sha256": "5ceff8eab0c3b2ceb3ac331241c80b2837f854e6b14d96024ddc1032a4a68edc",
+  "db_counts_before": {
+    "users": 503,
+    "products": 205,
+    "orders": 0
+  },
+  "db_counts_after": {
+    "users": 503,
+    "products": 205,
+    "orders": 6845
+  },
+  "samples": 48735,
+  "failed_samples": 0,
+  "avg_elapsed_ms_all_samples": 8.47,
+  "max_elapsed_ms_all_samples": 322.0,
+  "resources": {
+    "samples": 349,
+    "backend_pid": "1560",
+    "backend_cpu_pct": {
+      "min": 0.0,
+      "max": 56.2,
+      "avg": 16.299426934097422
+    },
+    "backend_rss_mb": {
+      "min": 53.23,
+      "max": 181.37,
+      "avg": 119.3922636103152
+    },
+    "backend_rss_start_mb": 53.29,
+    "backend_rss_end_mb": 177.79,
+    "jmeter_cpu_pct": {
+      "min": 0.0,
+      "max": 226.0,
+      "avg": 8.40458452722063
+    },
+    "jmeter_rss_mb": {
+      "min": 8.31,
+      "max": 825.98,
+      "avg": 487.6103151862464
+    },
+    "sys_cpu_pct": {
+      "min": 14.8,
+      "max": 99.5,
+      "avg": 41.22492836676218
+    },
+    "sys_ram_available_mb": {
+      "min": 1240.04,
+      "max": 2867.16,
+      "avg": 2332.5549283667624
+    }
+  },
+  "backend_pid": "1560",
+  "app_git_commit": "fd73e49ebfa7476bd2375bd72f11ebb8fca0b48c",
+  "sut_commit": "85af3ba875c88283615e22cb108f13e2fccaf0e9",
+  "note": ""
+}

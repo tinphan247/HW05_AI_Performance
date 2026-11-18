@@ -1,0 +1,311 @@
+{
+  "started": "2026-11-18T16:00:48+07:00",
+  "host": "DESKTOP-BCS88BQ",
+  "base_url": "http://localhost:3100",
+  "checks": {
+    "lockout_sequential": {
+      "email": "lockout@eshop.test",
+      "db_before": {
+        "login_attempts": 0,
+        "locked_until": null
+      },
+      "responses": [
+        {
+          "method": "POST",
+          "path": "/api/login",
+          "request_body": {
+            "email": "lockout@eshop.test",
+            "password": "DefinitelyWrong!"
+          },
+          "status": 401,
+          "elapsed_ms": 99.48,
+          "bytes": 37,
+          "body": {
+            "error": "Invalid email or password"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/login",
+          "request_body": {
+            "email": "lockout@eshop.test",
+            "password": "DefinitelyWrong!"
+          },
+          "status": 401,
+          "elapsed_ms": 4.32,
+          "bytes": 37,
+          "body": {
+            "error": "Invalid email or password"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/login",
+          "request_body": {
+            "email": "lockout@eshop.test",
+            "password": "DefinitelyWrong!"
+          },
+          "status": 403,
+          "elapsed_ms": 5.41,
+          "bytes": 68,
+          "body": {
+            "error": "Tài khoản đã bị khóa. Vui lòng thử lại sau."
+          }
+        }
+      ],
+      "db_after": {
+        "login_attempts": 4,
+        "locked_until": "2026-11-18T09:03:50.520Z"
+      },
+      "locked_seconds_remaining": 177.0
+    },
+    "lockout_race": {
+      "responses": [
+        {
+          "method": "POST",
+          "path": "/api/login",
+          "request_body": {
+            "email": "lockout@eshop.test",
+            "password": "DefinitelyWrong!"
+          },
+          "status": 401,
+          "elapsed_ms": 4.11,
+          "bytes": 37,
+          "body": {
+            "error": "Invalid email or password"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/login",
+          "request_body": {
+            "email": "lockout@eshop.test",
+            "password": "DefinitelyWrong!"
+          },
+          "status": 401,
+          "elapsed_ms": 8.91,
+          "bytes": 37,
+          "body": {
+            "error": "Invalid email or password"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/login",
+          "request_body": {
+            "email": "lockout@eshop.test",
+            "password": "DefinitelyWrong!"
+          },
+          "status": 403,
+          "elapsed_ms": 18.47,
+          "bytes": 68,
+          "body": {
+            "error": "Tài khoản đã bị khóa. Vui lòng thử lại sau."
+          }
+        }
+      ],
+      "statuses": [
+        401,
+        401,
+        403
+      ],
+      "db_after": {
+        "login_attempts": 4,
+        "locked_until": "2026-11-18T09:03:53.551Z"
+      }
+    },
+    "checkout_total_tamper": {
+      "login": {
+        "status": 200,
+        "elapsed_ms": 10.15
+      },
+      "product": {
+        "method": "GET",
+        "path": "/api/products/1",
+        "request_body": null,
+        "status": 200,
+        "elapsed_ms": 4.02,
+        "bytes": 183,
+        "body": {
+          "id": 1,
+          "name": "iPhone 15 Pro Max",
+          "price": 30000000,
+          "description": "Điện thoại cao cấp của Apple",
+          "imageUrl": "https://placehold.co/300x300/png?text=iPhone+15",
+          "category_id": 1
+        }
+      },
+      "add_to_cart": {
+        "method": "POST",
+        "path": "/api/cart",
+        "request_body": {
+          "productId": 1,
+          "name": "iPhone 15 Pro Max",
+          "price": 30000000.0,
+          "quantity": 1
+        },
+        "status": 200,
+        "elapsed_ms": 5.3,
+        "bytes": 27,
+        "body": {
+          "message": "Added to cart"
+        }
+      },
+      "cart_before": {
+        "method": "GET",
+        "path": "/api/cart",
+        "request_body": null,
+        "status": 200,
+        "elapsed_ms": 2.98,
+        "bytes": 74,
+        "body": [
+          {
+            "productId": 1,
+            "name": "iPhone 15 Pro Max",
+            "price": 30000000,
+            "quantity": 1
+          }
+        ]
+      },
+      "requested_total_amount": 1,
+      "checkout": {
+        "method": "POST",
+        "path": "/api/checkout",
+        "request_body": {
+          "total_amount": 1,
+          "shipping_address": "HW05 repro address"
+        },
+        "status": 200,
+        "elapsed_ms": 15.98,
+        "bytes": 45,
+        "body": {
+          "message": "Checkout successful",
+          "orderId": 1
+        }
+      },
+      "stored_order": {
+        "method": "GET",
+        "path": "/api/orders/1",
+        "request_body": null,
+        "status": 200,
+        "elapsed_ms": 26.03,
+        "bytes": 131,
+        "body": {
+          "id": 1,
+          "user_id": 3,
+          "total_amount": 1,
+          "status": "pending",
+          "shipping_address": "HW05 repro address",
+          "created_at": "2026-11-18 09:00:54"
+        }
+      },
+      "cart_after": {
+        "method": "GET",
+        "path": "/api/cart",
+        "request_body": null,
+        "status": 200,
+        "elapsed_ms": 2.98,
+        "bytes": 74,
+        "body": [
+          {
+            "productId": 1,
+            "name": "iPhone 15 Pro Max",
+            "price": 30000000,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    "cart_accumulation": {
+      "email": "perf002@eshop.test",
+      "cart_items_before": 0,
+      "cart_items_after": 25,
+      "sample_last_item": {
+        "productId": 2,
+        "price": 1,
+        "quantity": 1
+      }
+    },
+    "product_pagination": {
+      "response_status": 200,
+      "bytes": 25782,
+      "items": 205,
+      "query_supports_limit": false
+    },
+    "price_type": {
+      "id_3_price": 45000000,
+      "id_3_type": "int",
+      "id_4_price": "6000000",
+      "id_4_type": "str"
+    },
+    "search_quote": {
+      "method": "GET",
+      "path": "/api/products?search=%27",
+      "request_body": null,
+      "status": 500,
+      "elapsed_ms": 12.09,
+      "bytes": 67,
+      "body": "<h1>Database Error</h1><p>SQLITE_ERROR: unrecognized token: \"'\"</p>"
+    },
+    "search_union": {
+      "method": "GET",
+      "path": "/api/products?search=%25%27%20UNION%20SELECT%201,2,3,4,5,6,7,8,9,10--",
+      "request_body": null,
+      "status": 500,
+      "elapsed_ms": 3.43,
+      "bytes": 128,
+      "body": "<h1>Database Error</h1><p>SQLITE_ERROR: SELECTs to the left and right of UNION do not have the same number of result columns</p>"
+    },
+    "unauthenticated_product_write": {
+      "create": {
+        "method": "POST",
+        "path": "/api/products",
+        "request_body": {
+          "name": "HW05 unauth probe",
+          "price": 123,
+          "description": "created without Authorization header",
+          "imageUrl": "",
+          "category_id": 1
+        },
+        "status": 200,
+        "elapsed_ms": 24.98,
+        "bytes": 38,
+        "body": {
+          "message": "Product created",
+          "id": 206
+        }
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/api/products/206",
+        "request_body": {
+          "name": "HW05 unauth probe updated",
+          "price": 456
+        },
+        "status": 200,
+        "elapsed_ms": 17.79,
+        "bytes": 29,
+        "body": {
+          "message": "Product updated"
+        }
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/api/products/206",
+        "request_body": null,
+        "status": 200,
+        "elapsed_ms": 12.95,
+        "bytes": 29,
+        "body": {
+          "message": "Product deleted"
+        }
+      }
+    },
+    "db_counts": {
+      "users": 503,
+      "products": 205,
+      "orders": 1
+    }
+  },
+  "finished": "2026-11-18T16:00:54+07:00"
+}

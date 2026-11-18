@@ -1,0 +1,951 @@
+2026-11-18 15:06:42,766 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-11-18 15:06:42,836 INFO o.a.j.JMeter: Loading user properties from: C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\user.properties
+2026-11-18 15:06:42,841 INFO o.a.j.JMeter: Loading system properties from: C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\system.properties
+2026-11-18 15:06:42,841 INFO o.a.j.JMeter: Setting JMeter property: host=localhost
+2026-11-18 15:06:42,841 INFO o.a.j.JMeter: Setting JMeter property: port=3100
+2026-11-18 15:06:42,841 INFO o.a.j.JMeter: Setting JMeter property: csv=data/e2e_data.csv
+2026-11-18 15:06:42,864 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: Version 5.6.3
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: java.version=17.0.12
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: os.name=Windows 11
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: os.arch=amd64
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: os.version=10.0
+2026-11-18 15:06:42,866 INFO o.a.j.JMeter: file.encoding=Cp1252
+2026-11-18 15:06:42,868 INFO o.a.j.JMeter: java.awt.headless=true
+2026-11-18 15:06:42,868 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-11-18 15:06:42,868 INFO o.a.j.JMeter: Available Processors =8
+2026-11-18 15:06:42,898 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-11-18 15:06:42,898 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-11-18 15:06:42,898 INFO o.a.j.JMeter: JMeterHome=C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3
+2026-11-18 15:06:42,900 INFO o.a.j.JMeter: user.dir  =C:\HCMUS\hk7\Testing\hw5
+2026-11-18 15:06:42,900 INFO o.a.j.JMeter: PWD       =C:\HCMUS\hk7\Testing\hw5
+2026-11-18 15:06:42,908 INFO o.a.j.JMeter: IP: 192.168.100.194 Name: DESKTOP-BCS88BQ FullName: DESKTOP-BCS88BQ.lan
+2026-11-18 15:06:42,955 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'C:\HCMUS\hk7\Testing\hw5\results\spike\html'
+2026-11-18 15:06:42,965 INFO o.a.j.s.FileServer: Default base='C:\HCMUS\hk7\Testing\hw5'
+2026-11-18 15:06:42,969 INFO o.a.j.s.FileServer: Set new base='C:\HCMUS\hk7\Testing\hw5\test-plans'
+2026-11-18 15:06:43,494 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-11-18 15:06:43,563 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-11-18 15:06:43,569 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-11-18 15:06:43,577 INFO o.a.j.s.SaveService: Loading file: C:\HCMUS\hk7\Testing\hw5\test-plans\23120372_Spike_20261118.jmx
+2026-11-18 15:06:43,808 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-18 15:06:43,809 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-18 15:06:43,809 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-18 15:06:43,809 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-11-18 15:06:43,809 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-11-18 15:06:43,809 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-11-18 15:06:44,033 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-11-18 15:06:44,046 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-11-18 15:06:44,048 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: C:\HCMUS\hk7\Testing\hw5\results\spike\23120372_Spike_20261118.jtl
+2026-11-18 15:06:44,048 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\reportgenerator.properties
+2026-11-18 15:06:44,048 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-11-18 15:06:44,058 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-11-18 15:06:44,063 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-11-18 15:06:44,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-11-18 15:06:44,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-11-18 15:06:44,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-11-18 15:06:44,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-11-18 15:06:44,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-11-18 15:06:44,064 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-11-18 15:06:44,066 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-11-18 15:06:44,069 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,069 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,069 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,069 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,069 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-11-18 15:06:44,075 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-11-18 15:06:44,078 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-11-18 15:06:44,078 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-11-18 15:06:44,078 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-11-18 15:06:44,115 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-11-18 15:06:44,115 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-11-18 15:06:44,118 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-11-18 15:06:44,127 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-11-18 15:06:44,127 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-11-18 15:06:44,361 INFO o.a.j.JMeter: Running test (1794989204361)
+2026-11-18 15:06:44,376 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Spike C1 - Baseline 10 VUs
+2026-11-18 15:06:44,381 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Spike C1 - Baseline 10 VUs.
+2026-11-18 15:06:44,381 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,381 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=10 ramp-up=10 delayedStart=false
+2026-11-18 15:06:44,407 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-11-18 15:06:44,407 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : Spike C1 - Spike 100 VUs
+2026-11-18 15:06:44,408 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Spike C1 - Spike 100 VUs.
+2026-11-18 15:06:44,408 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,408 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=100 ramp-up=5 delayedStart=false
+2026-11-18 15:06:44,521 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2026-11-18 15:06:44,521 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 3 : Spike C1 - Recovery 10 VUs
+2026-11-18 15:06:44,521 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Spike C1 - Recovery 10 VUs.
+2026-11-18 15:06:44,521 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,521 INFO o.a.j.t.ThreadGroup: Starting thread group... number=3 threads=10 ramp-up=5 delayedStart=false
+2026-11-18 15:06:44,532 INFO o.a.j.t.ThreadGroup: Started thread group number 3
+2026-11-18 15:06:44,532 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 4 : Spike C2 - Baseline 10 VUs
+2026-11-18 15:06:44,532 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Spike C2 - Baseline 10 VUs.
+2026-11-18 15:06:44,532 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,532 INFO o.a.j.t.ThreadGroup: Starting thread group... number=4 threads=10 ramp-up=10 delayedStart=false
+2026-11-18 15:06:44,545 INFO o.a.j.t.ThreadGroup: Started thread group number 4
+2026-11-18 15:06:44,546 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 5 : Spike C2 - Spike 100 VUs
+2026-11-18 15:06:44,546 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Spike C2 - Spike 100 VUs.
+2026-11-18 15:06:44,546 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,546 INFO o.a.j.t.ThreadGroup: Starting thread group... number=5 threads=100 ramp-up=5 delayedStart=false
+2026-11-18 15:06:44,570 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-1
+2026-11-18 15:06:44,577 INFO o.a.j.s.FileServer: Stored: data/e2e_data.csv
+2026-11-18 15:06:44,654 INFO o.a.j.t.ThreadGroup: Started thread group number 5
+2026-11-18 15:06:44,654 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 6 : Spike C2 - Recovery 10 VUs
+2026-11-18 15:06:44,654 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Spike C2 - Recovery 10 VUs.
+2026-11-18 15:06:44,654 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,654 INFO o.a.j.t.ThreadGroup: Starting thread group... number=6 threads=10 ramp-up=5 delayedStart=false
+2026-11-18 15:06:44,660 INFO o.a.j.t.ThreadGroup: Started thread group number 6
+2026-11-18 15:06:44,661 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 7 : Spike C3 - Baseline 10 VUs
+2026-11-18 15:06:44,661 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Spike C3 - Baseline 10 VUs.
+2026-11-18 15:06:44,661 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,661 INFO o.a.j.t.ThreadGroup: Starting thread group... number=7 threads=10 ramp-up=10 delayedStart=false
+2026-11-18 15:06:44,666 INFO o.a.j.t.ThreadGroup: Started thread group number 7
+2026-11-18 15:06:44,666 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 8 : Spike C3 - Spike 100 VUs
+2026-11-18 15:06:44,666 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Spike C3 - Spike 100 VUs.
+2026-11-18 15:06:44,666 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,666 INFO o.a.j.t.ThreadGroup: Starting thread group... number=8 threads=100 ramp-up=5 delayedStart=false
+2026-11-18 15:06:44,740 INFO o.a.j.t.ThreadGroup: Started thread group number 8
+2026-11-18 15:06:44,740 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 9 : Spike C3 - Recovery 10 VUs
+2026-11-18 15:06:44,740 INFO o.a.j.e.StandardJMeterEngine: Starting 10 threads for group Spike C3 - Recovery 10 VUs.
+2026-11-18 15:06:44,740 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-11-18 15:06:44,740 INFO o.a.j.t.ThreadGroup: Starting thread group... number=9 threads=10 ramp-up=5 delayedStart=false
+2026-11-18 15:06:44,745 INFO o.a.j.t.ThreadGroup: Started thread group number 9
+2026-11-18 15:06:44,745 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-11-18 15:06:45,571 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-2
+2026-11-18 15:06:45,812 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = DESKTOP-BCS88BQ
+2026-11-18 15:06:45,827 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-11-18 15:06:45,830 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-11-18 15:06:45,830 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-11-18 15:06:45,831 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-11-18 15:06:45,831 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-11-18 15:06:46,555 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-3
+2026-11-18 15:06:47,570 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-4
+2026-11-18 15:06:48,558 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-5
+2026-11-18 15:06:49,576 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-6
+2026-11-18 15:06:50,572 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-7
+2026-11-18 15:06:51,541 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-8
+2026-11-18 15:06:52,578 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-9
+2026-11-18 15:06:53,548 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Baseline 10 VUs 1-10
+2026-11-18 15:07:00,098 INFO o.a.j.r.Summariser: summary +    102 in 00:00:16 =    6.5/s Avg:     6 Min:     1 Max:    88 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+2026-11-18 15:07:30,030 INFO o.a.j.r.Summariser: summary +    304 in 00:00:30 =   10.2/s Avg:     4 Min:     1 Max:    30 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+2026-11-18 15:07:30,031 INFO o.a.j.r.Summariser: summary =    406 in 00:00:46 =    8.9/s Avg:     5 Min:     1 Max:    88 Err:     0 (0.00%)
+2026-11-18 15:08:00,155 INFO o.a.j.r.Summariser: summary +    298 in 00:00:30 =    9.9/s Avg:     5 Min:     1 Max:    81 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+2026-11-18 15:08:00,155 INFO o.a.j.r.Summariser: summary =    704 in 00:01:16 =    9.3/s Avg:     5 Min:     1 Max:    88 Err:     0 (0.00%)
+2026-11-18 15:08:30,046 INFO o.a.j.r.Summariser: summary +    293 in 00:00:30 =    9.8/s Avg:     4 Min:     1 Max:    54 Err:     0 (0.00%) Active: 10 Started: 10 Finished: 0
+2026-11-18 15:08:30,046 INFO o.a.j.r.Summariser: summary =    997 in 00:01:46 =    9.4/s Avg:     5 Min:     1 Max:    88 Err:     0 (0.00%)
+2026-11-18 15:08:43,062 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-3
+2026-11-18 15:08:43,540 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-7
+2026-11-18 15:08:43,548 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-8
+2026-11-18 15:08:43,676 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-10
+2026-11-18 15:08:43,707 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-9
+2026-11-18 15:08:43,745 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-5
+2026-11-18 15:08:43,911 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-2
+2026-11-18 15:08:44,090 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-1
+2026-11-18 15:08:44,137 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-4
+2026-11-18 15:08:44,353 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Baseline 10 VUs 1-6
+2026-11-18 15:08:44,408 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-1
+2026-11-18 15:08:44,460 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-2
+2026-11-18 15:08:44,508 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-3
+2026-11-18 15:08:44,559 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-4
+2026-11-18 15:08:44,609 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-5
+2026-11-18 15:08:44,658 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-6
+2026-11-18 15:08:44,709 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-7
+2026-11-18 15:08:44,758 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-8
+2026-11-18 15:08:44,808 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-9
+2026-11-18 15:08:44,860 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-10
+2026-11-18 15:08:44,909 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-11
+2026-11-18 15:08:44,958 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-12
+2026-11-18 15:08:45,009 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-13
+2026-11-18 15:08:45,059 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-14
+2026-11-18 15:08:45,110 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-15
+2026-11-18 15:08:45,162 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-16
+2026-11-18 15:08:45,209 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-17
+2026-11-18 15:08:45,259 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-18
+2026-11-18 15:08:45,309 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-19
+2026-11-18 15:08:45,359 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-20
+2026-11-18 15:08:45,409 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-21
+2026-11-18 15:08:45,458 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-22
+2026-11-18 15:08:45,508 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-23
+2026-11-18 15:08:45,558 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-24
+2026-11-18 15:08:45,608 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-25
+2026-11-18 15:08:45,659 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-26
+2026-11-18 15:08:45,708 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-27
+2026-11-18 15:08:45,758 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-28
+2026-11-18 15:08:45,808 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-29
+2026-11-18 15:08:45,860 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-30
+2026-11-18 15:08:45,910 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-31
+2026-11-18 15:08:45,960 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-32
+2026-11-18 15:08:46,009 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-33
+2026-11-18 15:08:46,060 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-34
+2026-11-18 15:08:46,110 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-35
+2026-11-18 15:08:46,160 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-36
+2026-11-18 15:08:46,210 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-37
+2026-11-18 15:08:46,259 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-38
+2026-11-18 15:08:46,311 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-39
+2026-11-18 15:08:46,360 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-40
+2026-11-18 15:08:46,409 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-41
+2026-11-18 15:08:46,459 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-42
+2026-11-18 15:08:46,508 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-43
+2026-11-18 15:08:46,560 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-44
+2026-11-18 15:08:46,609 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-45
+2026-11-18 15:08:46,659 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-46
+2026-11-18 15:08:46,708 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-47
+2026-11-18 15:08:46,758 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-48
+2026-11-18 15:08:46,810 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-49
+2026-11-18 15:08:46,859 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-50
+2026-11-18 15:08:46,908 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-51
+2026-11-18 15:08:46,959 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-52
+2026-11-18 15:08:47,009 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-53
+2026-11-18 15:08:47,059 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-54
+2026-11-18 15:08:47,108 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-55
+2026-11-18 15:08:47,159 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-56
+2026-11-18 15:08:47,210 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-57
+2026-11-18 15:08:47,261 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-58
+2026-11-18 15:08:47,309 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-59
+2026-11-18 15:08:47,360 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-60
+2026-11-18 15:08:47,410 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-61
+2026-11-18 15:08:47,459 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-62
+2026-11-18 15:08:47,512 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-63
+2026-11-18 15:08:47,560 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-64
+2026-11-18 15:08:47,610 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-65
+2026-11-18 15:08:47,660 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-66
+2026-11-18 15:08:47,710 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-67
+2026-11-18 15:08:47,760 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-68
+2026-11-18 15:08:47,810 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-69
+2026-11-18 15:08:47,860 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-70
+2026-11-18 15:08:47,911 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-71
+2026-11-18 15:08:47,961 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-72
+2026-11-18 15:08:48,010 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-73
+2026-11-18 15:08:48,059 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-74
+2026-11-18 15:08:48,110 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-75
+2026-11-18 15:08:48,162 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-76
+2026-11-18 15:08:48,212 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-77
+2026-11-18 15:08:48,261 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-78
+2026-11-18 15:08:48,310 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-79
+2026-11-18 15:08:48,360 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-80
+2026-11-18 15:08:48,409 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-81
+2026-11-18 15:08:48,459 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-82
+2026-11-18 15:08:48,509 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-83
+2026-11-18 15:08:48,560 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-84
+2026-11-18 15:08:48,610 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-85
+2026-11-18 15:08:48,658 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-86
+2026-11-18 15:08:48,710 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-87
+2026-11-18 15:08:48,759 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-88
+2026-11-18 15:08:48,809 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-89
+2026-11-18 15:08:48,859 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-90
+2026-11-18 15:08:48,909 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-91
+2026-11-18 15:08:48,961 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-92
+2026-11-18 15:08:49,011 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-93
+2026-11-18 15:08:49,059 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-94
+2026-11-18 15:08:49,109 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-95
+2026-11-18 15:08:49,162 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-96
+2026-11-18 15:08:49,212 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-97
+2026-11-18 15:08:49,261 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-98
+2026-11-18 15:08:49,312 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-99
+2026-11-18 15:08:49,363 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Spike 100 VUs 2-100
+2026-11-18 15:09:00,016 INFO o.a.j.r.Summariser: summary +   1374 in 00:00:30 =   45.8/s Avg:    14 Min:     0 Max:   177 Err:     0 (0.00%) Active: 100 Started: 110 Finished: 10
+2026-11-18 15:09:00,017 INFO o.a.j.r.Summariser: summary =   2371 in 00:02:16 =   17.5/s Avg:    10 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:09:30,014 INFO o.a.j.r.Summariser: summary +   2925 in 00:00:30 =   97.5/s Avg:     4 Min:     0 Max:   103 Err:     0 (0.00%) Active: 100 Started: 110 Finished: 10
+2026-11-18 15:09:30,014 INFO o.a.j.r.Summariser: summary =   5296 in 00:02:46 =   32.0/s Avg:     7 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:09:42,713 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-26
+2026-11-18 15:09:42,875 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-53
+2026-11-18 15:09:42,965 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-57
+2026-11-18 15:09:42,983 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-89
+2026-11-18 15:09:43,027 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-69
+2026-11-18 15:09:43,077 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-14
+2026-11-18 15:09:43,079 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-1
+2026-11-18 15:09:43,087 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-11
+2026-11-18 15:09:43,114 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-98
+2026-11-18 15:09:43,133 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-47
+2026-11-18 15:09:43,214 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-4
+2026-11-18 15:09:43,279 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-100
+2026-11-18 15:09:43,283 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-12
+2026-11-18 15:09:43,362 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-93
+2026-11-18 15:09:43,399 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-63
+2026-11-18 15:09:43,403 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-44
+2026-11-18 15:09:43,457 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-65
+2026-11-18 15:09:43,464 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-40
+2026-11-18 15:09:43,511 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-71
+2026-11-18 15:09:43,589 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-78
+2026-11-18 15:09:43,602 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-10
+2026-11-18 15:09:43,611 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-72
+2026-11-18 15:09:43,613 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-82
+2026-11-18 15:09:43,623 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-85
+2026-11-18 15:09:43,629 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-30
+2026-11-18 15:09:43,643 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-99
+2026-11-18 15:09:43,647 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-50
+2026-11-18 15:09:43,683 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-41
+2026-11-18 15:09:43,711 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-75
+2026-11-18 15:09:43,748 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-68
+2026-11-18 15:09:43,757 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-5
+2026-11-18 15:09:43,762 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-27
+2026-11-18 15:09:43,765 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-87
+2026-11-18 15:09:43,780 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-70
+2026-11-18 15:09:43,792 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-91
+2026-11-18 15:09:43,799 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-31
+2026-11-18 15:09:43,822 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-83
+2026-11-18 15:09:43,827 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-36
+2026-11-18 15:09:43,842 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-8
+2026-11-18 15:09:43,864 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-67
+2026-11-18 15:09:43,875 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-32
+2026-11-18 15:09:43,876 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-95
+2026-11-18 15:09:43,903 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-66
+2026-11-18 15:09:43,910 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-92
+2026-11-18 15:09:43,919 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-35
+2026-11-18 15:09:43,926 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-29
+2026-11-18 15:09:43,937 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-52
+2026-11-18 15:09:43,937 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-3
+2026-11-18 15:09:43,946 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-16
+2026-11-18 15:09:43,983 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-97
+2026-11-18 15:09:44,002 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-76
+2026-11-18 15:09:44,008 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-22
+2026-11-18 15:09:44,018 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-80
+2026-11-18 15:09:44,018 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-37
+2026-11-18 15:09:44,040 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-90
+2026-11-18 15:09:44,101 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-34
+2026-11-18 15:09:44,116 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-59
+2026-11-18 15:09:44,146 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-77
+2026-11-18 15:09:44,158 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-48
+2026-11-18 15:09:44,160 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-7
+2026-11-18 15:09:44,162 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-24
+2026-11-18 15:09:44,162 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-25
+2026-11-18 15:09:44,163 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-79
+2026-11-18 15:09:44,177 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-55
+2026-11-18 15:09:44,179 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-58
+2026-11-18 15:09:44,181 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-33
+2026-11-18 15:09:44,186 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-15
+2026-11-18 15:09:44,198 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-62
+2026-11-18 15:09:44,199 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-42
+2026-11-18 15:09:44,205 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-81
+2026-11-18 15:09:44,250 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-13
+2026-11-18 15:09:44,251 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-43
+2026-11-18 15:09:44,271 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-61
+2026-11-18 15:09:44,272 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-23
+2026-11-18 15:09:44,279 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-96
+2026-11-18 15:09:44,280 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-21
+2026-11-18 15:09:44,288 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-17
+2026-11-18 15:09:44,295 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-60
+2026-11-18 15:09:44,305 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-51
+2026-11-18 15:09:44,311 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-28
+2026-11-18 15:09:44,338 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-19
+2026-11-18 15:09:44,341 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-54
+2026-11-18 15:09:44,345 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-49
+2026-11-18 15:09:44,351 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-56
+2026-11-18 15:09:44,354 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-39
+2026-11-18 15:09:44,360 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-84
+2026-11-18 15:09:44,376 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-64
+2026-11-18 15:09:44,378 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-2
+2026-11-18 15:09:44,383 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-9
+2026-11-18 15:09:44,384 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-45
+2026-11-18 15:09:44,386 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-38
+2026-11-18 15:09:44,394 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-6
+2026-11-18 15:09:44,400 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-46
+2026-11-18 15:09:44,424 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-20
+2026-11-18 15:09:44,426 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-18
+2026-11-18 15:09:44,427 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-86
+2026-11-18 15:09:44,451 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-73
+2026-11-18 15:09:44,491 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-88
+2026-11-18 15:09:44,509 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-94
+2026-11-18 15:09:44,509 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: Spike C1 - Spike 100 VUs 2-74
+2026-11-18 15:09:44,509 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Spike 100 VUs 2-74
+2026-11-18 15:09:44,521 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-1
+2026-11-18 15:09:45,022 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-2
+2026-11-18 15:09:45,523 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-3
+2026-11-18 15:09:46,021 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-4
+2026-11-18 15:09:46,521 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-5
+2026-11-18 15:09:47,022 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-6
+2026-11-18 15:09:47,522 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-7
+2026-11-18 15:09:48,023 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-8
+2026-11-18 15:09:48,522 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-9
+2026-11-18 15:09:49,022 INFO o.a.j.t.JMeterThread: Thread started: Spike C1 - Recovery 10 VUs 3-10
+2026-11-18 15:10:00,096 INFO o.a.j.r.Summariser: summary +   1578 in 00:00:30 =   52.5/s Avg:     4 Min:     0 Max:    97 Err:     0 (0.00%) Active: 10 Started: 120 Finished: 110
+2026-11-18 15:10:00,096 INFO o.a.j.r.Summariser: summary =   6874 in 00:03:16 =   35.1/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:10:30,057 INFO o.a.j.r.Summariser: summary +    316 in 00:00:30 =   10.5/s Avg:     4 Min:     1 Max:    26 Err:     0 (0.00%) Active: 10 Started: 120 Finished: 110
+2026-11-18 15:10:30,058 INFO o.a.j.r.Summariser: summary =   7190 in 00:03:46 =   31.9/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:11:00,136 INFO o.a.j.r.Summariser: summary +    295 in 00:00:30 =    9.8/s Avg:     7 Min:     1 Max:    92 Err:     0 (0.00%) Active: 10 Started: 120 Finished: 110
+2026-11-18 15:11:00,137 INFO o.a.j.r.Summariser: summary =   7485 in 00:04:16 =   29.3/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:11:30,046 INFO o.a.j.r.Summariser: summary +    297 in 00:00:30 =    9.9/s Avg:     5 Min:     0 Max:    78 Err:     0 (0.00%) Active: 10 Started: 120 Finished: 110
+2026-11-18 15:11:30,047 INFO o.a.j.r.Summariser: summary =   7782 in 00:04:46 =   27.2/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:11:43,057 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-5
+2026-11-18 15:11:43,445 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-8
+2026-11-18 15:11:43,470 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-3
+2026-11-18 15:11:43,532 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-7
+2026-11-18 15:11:43,587 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-4
+2026-11-18 15:11:44,033 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-9
+2026-11-18 15:11:44,142 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-6
+2026-11-18 15:11:44,338 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-10
+2026-11-18 15:11:44,357 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-2
+2026-11-18 15:11:44,419 INFO o.a.j.t.JMeterThread: Thread finished: Spike C1 - Recovery 10 VUs 3-1
+2026-11-18 15:11:44,533 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-1
+2026-11-18 15:11:45,533 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-2
+2026-11-18 15:11:46,534 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-3
+2026-11-18 15:11:47,533 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-4
+2026-11-18 15:11:48,533 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-5
+2026-11-18 15:11:49,534 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-6
+2026-11-18 15:11:50,534 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-7
+2026-11-18 15:11:51,533 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-8
+2026-11-18 15:11:52,533 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-9
+2026-11-18 15:11:53,532 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Baseline 10 VUs 4-10
+2026-11-18 15:12:00,008 INFO o.a.j.r.Summariser: summary +    246 in 00:00:30 =    8.2/s Avg:     5 Min:     1 Max:    80 Err:     0 (0.00%) Active: 10 Started: 130 Finished: 120
+2026-11-18 15:12:00,008 INFO o.a.j.r.Summariser: summary =   8028 in 00:05:16 =   25.4/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:12:30,027 INFO o.a.j.r.Summariser: summary +    295 in 00:00:30 =    9.8/s Avg:     5 Min:     1 Max:    20 Err:     0 (0.00%) Active: 10 Started: 130 Finished: 120
+2026-11-18 15:12:30,028 INFO o.a.j.r.Summariser: summary =   8323 in 00:05:46 =   24.1/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:13:00,086 INFO o.a.j.r.Summariser: summary +    307 in 00:00:30 =   10.2/s Avg:     5 Min:     1 Max:    64 Err:     0 (0.00%) Active: 10 Started: 130 Finished: 120
+2026-11-18 15:13:00,087 INFO o.a.j.r.Summariser: summary =   8630 in 00:06:16 =   23.0/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:13:30,036 INFO o.a.j.r.Summariser: summary +    296 in 00:00:30 =    9.9/s Avg:     5 Min:     1 Max:    74 Err:     0 (0.00%) Active: 10 Started: 130 Finished: 120
+2026-11-18 15:13:30,037 INFO o.a.j.r.Summariser: summary =   8926 in 00:06:46 =   22.0/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:13:42,993 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-6
+2026-11-18 15:13:43,366 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-2
+2026-11-18 15:13:43,649 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-4
+2026-11-18 15:13:43,665 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-1
+2026-11-18 15:13:43,698 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-10
+2026-11-18 15:13:43,928 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-5
+2026-11-18 15:13:44,011 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-9
+2026-11-18 15:13:44,071 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-3
+2026-11-18 15:13:44,307 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-8
+2026-11-18 15:13:44,528 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Baseline 10 VUs 4-7
+2026-11-18 15:13:44,547 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-1
+2026-11-18 15:13:44,598 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-2
+2026-11-18 15:13:44,647 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-3
+2026-11-18 15:13:44,696 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-4
+2026-11-18 15:13:44,747 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-5
+2026-11-18 15:13:44,797 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-6
+2026-11-18 15:13:44,847 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-7
+2026-11-18 15:13:44,897 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-8
+2026-11-18 15:13:44,946 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-9
+2026-11-18 15:13:44,998 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-10
+2026-11-18 15:13:45,047 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-11
+2026-11-18 15:13:45,097 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-12
+2026-11-18 15:13:45,147 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-13
+2026-11-18 15:13:45,199 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-14
+2026-11-18 15:13:45,248 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-15
+2026-11-18 15:13:45,297 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-16
+2026-11-18 15:13:45,347 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-17
+2026-11-18 15:13:45,398 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-18
+2026-11-18 15:13:45,447 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-19
+2026-11-18 15:13:45,497 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-20
+2026-11-18 15:13:45,547 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-21
+2026-11-18 15:13:45,597 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-22
+2026-11-18 15:13:45,647 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-23
+2026-11-18 15:13:45,697 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-24
+2026-11-18 15:13:45,748 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-25
+2026-11-18 15:13:45,798 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-26
+2026-11-18 15:13:45,848 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-27
+2026-11-18 15:13:45,898 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-28
+2026-11-18 15:13:45,948 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-29
+2026-11-18 15:13:45,998 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-30
+2026-11-18 15:13:46,048 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-31
+2026-11-18 15:13:46,099 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-32
+2026-11-18 15:13:46,148 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-33
+2026-11-18 15:13:46,198 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-34
+2026-11-18 15:13:46,247 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-35
+2026-11-18 15:13:46,297 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-36
+2026-11-18 15:13:46,347 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-37
+2026-11-18 15:13:46,397 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-38
+2026-11-18 15:13:46,448 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-39
+2026-11-18 15:13:46,497 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-40
+2026-11-18 15:13:46,548 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-41
+2026-11-18 15:13:46,597 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-42
+2026-11-18 15:13:46,646 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-43
+2026-11-18 15:13:46,697 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-44
+2026-11-18 15:13:46,748 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-45
+2026-11-18 15:13:46,798 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-46
+2026-11-18 15:13:46,847 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-47
+2026-11-18 15:13:46,897 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-48
+2026-11-18 15:13:46,946 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-49
+2026-11-18 15:13:46,998 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-50
+2026-11-18 15:13:47,047 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-51
+2026-11-18 15:13:47,097 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-52
+2026-11-18 15:13:47,148 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-53
+2026-11-18 15:13:47,196 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-54
+2026-11-18 15:13:47,247 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-55
+2026-11-18 15:13:47,297 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-56
+2026-11-18 15:13:47,346 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-57
+2026-11-18 15:13:47,397 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-58
+2026-11-18 15:13:47,448 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-59
+2026-11-18 15:13:47,497 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-60
+2026-11-18 15:13:47,548 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-61
+2026-11-18 15:13:47,596 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-62
+2026-11-18 15:13:47,648 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-63
+2026-11-18 15:13:47,698 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-64
+2026-11-18 15:13:47,748 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-65
+2026-11-18 15:13:47,797 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-66
+2026-11-18 15:13:47,848 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-67
+2026-11-18 15:13:47,898 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-68
+2026-11-18 15:13:47,947 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-69
+2026-11-18 15:13:47,998 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-70
+2026-11-18 15:13:48,048 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-71
+2026-11-18 15:13:48,097 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-72
+2026-11-18 15:13:48,147 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-73
+2026-11-18 15:13:48,197 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-74
+2026-11-18 15:13:48,247 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-75
+2026-11-18 15:13:48,297 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-76
+2026-11-18 15:13:48,347 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-77
+2026-11-18 15:13:48,398 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-78
+2026-11-18 15:13:48,448 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-79
+2026-11-18 15:13:48,497 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-80
+2026-11-18 15:13:48,548 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-81
+2026-11-18 15:13:48,597 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-82
+2026-11-18 15:13:48,648 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-83
+2026-11-18 15:13:48,698 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-84
+2026-11-18 15:13:48,751 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-85
+2026-11-18 15:13:48,800 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-86
+2026-11-18 15:13:48,849 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-87
+2026-11-18 15:13:48,898 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-88
+2026-11-18 15:13:48,947 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-89
+2026-11-18 15:13:48,998 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-90
+2026-11-18 15:13:49,048 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-91
+2026-11-18 15:13:49,098 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-92
+2026-11-18 15:13:49,148 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-93
+2026-11-18 15:13:49,198 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-94
+2026-11-18 15:13:49,250 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-95
+2026-11-18 15:13:49,298 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-96
+2026-11-18 15:13:49,351 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-97
+2026-11-18 15:13:49,399 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-98
+2026-11-18 15:13:49,448 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-99
+2026-11-18 15:13:49,497 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Spike 100 VUs 5-100
+2026-11-18 15:14:00,032 INFO o.a.j.r.Summariser: summary +   1394 in 00:00:30 =   46.5/s Avg:     5 Min:     1 Max:    33 Err:     0 (0.00%) Active: 100 Started: 230 Finished: 130
+2026-11-18 15:14:00,032 INFO o.a.j.r.Summariser: summary =  10320 in 00:07:16 =   23.7/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:14:30,015 INFO o.a.j.r.Summariser: summary +   2959 in 00:00:30 =   98.7/s Avg:     7 Min:     0 Max:   129 Err:     0 (0.00%) Active: 100 Started: 230 Finished: 130
+2026-11-18 15:14:30,016 INFO o.a.j.r.Summariser: summary =  13279 in 00:07:46 =   28.5/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:14:42,484 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-34
+2026-11-18 15:14:42,668 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-42
+2026-11-18 15:14:42,752 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-54
+2026-11-18 15:14:42,863 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-59
+2026-11-18 15:14:43,016 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-18
+2026-11-18 15:14:43,236 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-48
+2026-11-18 15:14:43,371 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-77
+2026-11-18 15:14:43,392 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-32
+2026-11-18 15:14:43,412 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-89
+2026-11-18 15:14:43,471 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-26
+2026-11-18 15:14:43,476 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-75
+2026-11-18 15:14:43,501 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-49
+2026-11-18 15:14:43,502 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-7
+2026-11-18 15:14:43,520 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-33
+2026-11-18 15:14:43,521 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-60
+2026-11-18 15:14:43,564 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-99
+2026-11-18 15:14:43,569 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-3
+2026-11-18 15:14:43,579 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-15
+2026-11-18 15:14:43,580 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-30
+2026-11-18 15:14:43,595 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-51
+2026-11-18 15:14:43,612 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-22
+2026-11-18 15:14:43,632 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-31
+2026-11-18 15:14:43,764 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-13
+2026-11-18 15:14:43,777 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-83
+2026-11-18 15:14:43,785 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-47
+2026-11-18 15:14:43,785 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-69
+2026-11-18 15:14:43,787 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-2
+2026-11-18 15:14:43,796 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-87
+2026-11-18 15:14:43,805 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-24
+2026-11-18 15:14:43,837 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-21
+2026-11-18 15:14:43,837 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-97
+2026-11-18 15:14:43,878 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-37
+2026-11-18 15:14:43,898 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-81
+2026-11-18 15:14:43,972 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-67
+2026-11-18 15:14:43,974 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-82
+2026-11-18 15:14:43,997 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-57
+2026-11-18 15:14:44,011 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-19
+2026-11-18 15:14:44,019 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-10
+2026-11-18 15:14:44,022 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-86
+2026-11-18 15:14:44,029 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-39
+2026-11-18 15:14:44,034 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-1
+2026-11-18 15:14:44,036 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-38
+2026-11-18 15:14:44,052 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-11
+2026-11-18 15:14:44,053 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-91
+2026-11-18 15:14:44,055 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-84
+2026-11-18 15:14:44,074 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-41
+2026-11-18 15:14:44,139 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-16
+2026-11-18 15:14:44,143 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-20
+2026-11-18 15:14:44,162 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-58
+2026-11-18 15:14:44,170 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-55
+2026-11-18 15:14:44,174 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-61
+2026-11-18 15:14:44,190 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-70
+2026-11-18 15:14:44,195 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-52
+2026-11-18 15:14:44,202 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-66
+2026-11-18 15:14:44,204 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-78
+2026-11-18 15:14:44,227 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-23
+2026-11-18 15:14:44,237 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-73
+2026-11-18 15:14:44,242 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-93
+2026-11-18 15:14:44,271 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-5
+2026-11-18 15:14:44,276 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-50
+2026-11-18 15:14:44,287 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-43
+2026-11-18 15:14:44,292 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-29
+2026-11-18 15:14:44,310 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-4
+2026-11-18 15:14:44,319 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-6
+2026-11-18 15:14:44,338 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-95
+2026-11-18 15:14:44,339 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-56
+2026-11-18 15:14:44,340 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-65
+2026-11-18 15:14:44,358 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-28
+2026-11-18 15:14:44,367 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-80
+2026-11-18 15:14:44,370 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-63
+2026-11-18 15:14:44,379 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-92
+2026-11-18 15:14:44,387 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-36
+2026-11-18 15:14:44,392 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-44
+2026-11-18 15:14:44,394 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-27
+2026-11-18 15:14:44,398 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-25
+2026-11-18 15:14:44,422 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-8
+2026-11-18 15:14:44,426 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-96
+2026-11-18 15:14:44,427 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-76
+2026-11-18 15:14:44,440 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-53
+2026-11-18 15:14:44,453 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-64
+2026-11-18 15:14:44,454 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-98
+2026-11-18 15:14:44,469 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-74
+2026-11-18 15:14:44,473 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-9
+2026-11-18 15:14:44,477 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-79
+2026-11-18 15:14:44,498 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-40
+2026-11-18 15:14:44,511 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-90
+2026-11-18 15:14:44,512 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-62
+2026-11-18 15:14:44,516 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-46
+2026-11-18 15:14:44,519 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-12
+2026-11-18 15:14:44,527 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-94
+2026-11-18 15:14:44,541 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-14
+2026-11-18 15:14:44,541 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-71
+2026-11-18 15:14:44,570 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-68
+2026-11-18 15:14:44,570 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-72
+2026-11-18 15:14:44,571 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-17
+2026-11-18 15:14:44,573 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-35
+2026-11-18 15:14:44,575 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-88
+2026-11-18 15:14:44,596 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-45
+2026-11-18 15:14:44,603 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-100
+2026-11-18 15:14:44,642 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Spike 100 VUs 5-85
+2026-11-18 15:14:44,656 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-1
+2026-11-18 15:14:45,156 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-2
+2026-11-18 15:14:45,654 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-3
+2026-11-18 15:14:46,155 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-4
+2026-11-18 15:14:46,657 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-5
+2026-11-18 15:14:47,154 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-6
+2026-11-18 15:14:47,656 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-7
+2026-11-18 15:14:48,154 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-8
+2026-11-18 15:14:48,656 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-9
+2026-11-18 15:14:49,156 INFO o.a.j.t.JMeterThread: Thread started: Spike C2 - Recovery 10 VUs 6-10
+2026-11-18 15:15:00,143 INFO o.a.j.r.Summariser: summary +   1553 in 00:00:30 =   51.5/s Avg:     5 Min:     0 Max:    77 Err:     0 (0.00%) Active: 10 Started: 240 Finished: 230
+2026-11-18 15:15:00,143 INFO o.a.j.r.Summariser: summary =  14832 in 00:08:16 =   29.9/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:15:30,151 INFO o.a.j.r.Summariser: summary +    291 in 00:00:30 =    9.7/s Avg:     5 Min:     1 Max:    42 Err:     0 (0.00%) Active: 10 Started: 240 Finished: 230
+2026-11-18 15:15:30,151 INFO o.a.j.r.Summariser: summary =  15123 in 00:08:46 =   28.8/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:16:00,124 INFO o.a.j.r.Summariser: summary +    289 in 00:00:30 =    9.6/s Avg:     5 Min:     1 Max:    61 Err:     0 (0.00%) Active: 10 Started: 240 Finished: 230
+2026-11-18 15:16:00,125 INFO o.a.j.r.Summariser: summary =  15412 in 00:09:16 =   27.7/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:16:30,036 INFO o.a.j.r.Summariser: summary +    301 in 00:00:30 =   10.1/s Avg:     5 Min:     1 Max:    84 Err:     0 (0.00%) Active: 10 Started: 240 Finished: 230
+2026-11-18 15:16:30,036 INFO o.a.j.r.Summariser: summary =  15713 in 00:09:46 =   26.8/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:16:43,333 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-3
+2026-11-18 15:16:43,386 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-4
+2026-11-18 15:16:43,740 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-10
+2026-11-18 15:16:44,153 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-1
+2026-11-18 15:16:44,232 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-6
+2026-11-18 15:16:44,341 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-8
+2026-11-18 15:16:44,480 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-7
+2026-11-18 15:16:44,587 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-5
+2026-11-18 15:16:44,614 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-9
+2026-11-18 15:16:44,648 INFO o.a.j.t.JMeterThread: Thread finished: Spike C2 - Recovery 10 VUs 6-2
+2026-11-18 15:16:44,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-1
+2026-11-18 15:16:45,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-2
+2026-11-18 15:16:46,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-3
+2026-11-18 15:16:47,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-4
+2026-11-18 15:16:48,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-5
+2026-11-18 15:16:49,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-6
+2026-11-18 15:16:50,662 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-7
+2026-11-18 15:16:51,664 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-8
+2026-11-18 15:16:52,662 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-9
+2026-11-18 15:16:53,663 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Baseline 10 VUs 7-10
+2026-11-18 15:17:00,045 INFO o.a.j.r.Summariser: summary +    246 in 00:00:30 =    8.2/s Avg:     5 Min:     1 Max:    71 Err:     0 (0.00%) Active: 10 Started: 250 Finished: 240
+2026-11-18 15:17:00,045 INFO o.a.j.r.Summariser: summary =  15959 in 00:10:16 =   25.9/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:17:30,051 INFO o.a.j.r.Summariser: summary +    303 in 00:00:30 =   10.1/s Avg:     5 Min:     1 Max:    46 Err:     0 (0.00%) Active: 10 Started: 250 Finished: 240
+2026-11-18 15:17:30,052 INFO o.a.j.r.Summariser: summary =  16262 in 00:10:46 =   25.2/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:18:00,463 INFO o.a.j.r.Summariser: summary +    284 in 00:00:30 =    9.3/s Avg:     5 Min:     1 Max:    70 Err:     0 (0.00%) Active: 10 Started: 250 Finished: 240
+2026-11-18 15:18:00,463 INFO o.a.j.r.Summariser: summary =  16546 in 00:11:16 =   24.5/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:18:30,091 INFO o.a.j.r.Summariser: summary +    294 in 00:00:30 =    9.9/s Avg:     5 Min:     1 Max:    24 Err:     0 (0.00%) Active: 10 Started: 250 Finished: 240
+2026-11-18 15:18:30,092 INFO o.a.j.r.Summariser: summary =  16840 in 00:11:46 =   23.9/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:18:42,727 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-9
+2026-11-18 15:18:43,160 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-8
+2026-11-18 15:18:43,657 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-1
+2026-11-18 15:18:43,765 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-6
+2026-11-18 15:18:43,865 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-2
+2026-11-18 15:18:43,875 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-3
+2026-11-18 15:18:43,941 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-7
+2026-11-18 15:18:44,193 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-10
+2026-11-18 15:18:44,247 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-4
+2026-11-18 15:18:44,642 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Baseline 10 VUs 7-5
+2026-11-18 15:18:44,666 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-1
+2026-11-18 15:18:44,716 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-2
+2026-11-18 15:18:44,768 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-3
+2026-11-18 15:18:44,817 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-4
+2026-11-18 15:18:44,867 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-5
+2026-11-18 15:18:44,917 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-6
+2026-11-18 15:18:44,968 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-7
+2026-11-18 15:18:45,017 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-8
+2026-11-18 15:18:45,067 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-9
+2026-11-18 15:18:45,116 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-10
+2026-11-18 15:18:45,167 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-11
+2026-11-18 15:18:45,217 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-12
+2026-11-18 15:18:45,266 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-13
+2026-11-18 15:18:45,316 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-14
+2026-11-18 15:18:45,366 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-15
+2026-11-18 15:18:45,416 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-16
+2026-11-18 15:18:45,467 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-17
+2026-11-18 15:18:45,516 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-18
+2026-11-18 15:18:45,566 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-19
+2026-11-18 15:18:45,617 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-20
+2026-11-18 15:18:45,668 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-21
+2026-11-18 15:18:45,717 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-22
+2026-11-18 15:18:45,767 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-23
+2026-11-18 15:18:45,818 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-24
+2026-11-18 15:18:45,867 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-25
+2026-11-18 15:18:45,917 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-26
+2026-11-18 15:18:45,968 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-27
+2026-11-18 15:18:46,018 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-28
+2026-11-18 15:18:46,069 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-29
+2026-11-18 15:18:46,117 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-30
+2026-11-18 15:18:46,166 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-31
+2026-11-18 15:18:46,217 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-32
+2026-11-18 15:18:46,267 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-33
+2026-11-18 15:18:46,319 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-34
+2026-11-18 15:18:46,367 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-35
+2026-11-18 15:18:46,417 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-36
+2026-11-18 15:18:46,469 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-37
+2026-11-18 15:18:46,517 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-38
+2026-11-18 15:18:46,567 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-39
+2026-11-18 15:18:46,617 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-40
+2026-11-18 15:18:46,670 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-41
+2026-11-18 15:18:46,717 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-42
+2026-11-18 15:18:46,767 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-43
+2026-11-18 15:18:46,817 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-44
+2026-11-18 15:18:46,867 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-45
+2026-11-18 15:18:46,919 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-46
+2026-11-18 15:18:46,966 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-47
+2026-11-18 15:18:47,018 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-48
+2026-11-18 15:18:47,067 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-49
+2026-11-18 15:18:47,117 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-50
+2026-11-18 15:18:47,167 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-51
+2026-11-18 15:18:47,217 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-52
+2026-11-18 15:18:47,267 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-53
+2026-11-18 15:18:47,317 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-54
+2026-11-18 15:18:47,367 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-55
+2026-11-18 15:18:47,417 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-56
+2026-11-18 15:18:47,467 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-57
+2026-11-18 15:18:47,517 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-58
+2026-11-18 15:18:47,567 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-59
+2026-11-18 15:18:47,617 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-60
+2026-11-18 15:18:47,668 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-61
+2026-11-18 15:18:47,718 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-62
+2026-11-18 15:18:47,766 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-63
+2026-11-18 15:18:47,817 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-64
+2026-11-18 15:18:47,867 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-65
+2026-11-18 15:18:47,918 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-66
+2026-11-18 15:18:47,966 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-67
+2026-11-18 15:18:48,017 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-68
+2026-11-18 15:18:48,067 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-69
+2026-11-18 15:18:48,118 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-70
+2026-11-18 15:18:48,167 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-71
+2026-11-18 15:18:48,219 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-72
+2026-11-18 15:18:48,267 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-73
+2026-11-18 15:18:48,318 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-74
+2026-11-18 15:18:48,366 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-75
+2026-11-18 15:18:48,417 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-76
+2026-11-18 15:18:48,468 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-77
+2026-11-18 15:18:48,517 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-78
+2026-11-18 15:18:48,567 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-79
+2026-11-18 15:18:48,618 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-80
+2026-11-18 15:18:48,667 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-81
+2026-11-18 15:18:48,718 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-82
+2026-11-18 15:18:48,768 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-83
+2026-11-18 15:18:48,818 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-84
+2026-11-18 15:18:48,867 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-85
+2026-11-18 15:18:48,917 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-86
+2026-11-18 15:18:48,967 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-87
+2026-11-18 15:18:49,017 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-88
+2026-11-18 15:18:49,067 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-89
+2026-11-18 15:18:49,117 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-90
+2026-11-18 15:18:49,167 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-91
+2026-11-18 15:18:49,217 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-92
+2026-11-18 15:18:49,267 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-93
+2026-11-18 15:18:49,317 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-94
+2026-11-18 15:18:49,367 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-95
+2026-11-18 15:18:49,416 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-96
+2026-11-18 15:18:49,467 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-97
+2026-11-18 15:18:49,517 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-98
+2026-11-18 15:18:49,566 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-99
+2026-11-18 15:18:49,616 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Spike 100 VUs 8-100
+2026-11-18 15:19:00,014 INFO o.a.j.r.Summariser: summary +   1377 in 00:00:30 =   46.0/s Avg:     5 Min:     0 Max:    62 Err:     0 (0.00%) Active: 100 Started: 350 Finished: 250
+2026-11-18 15:19:00,014 INFO o.a.j.r.Summariser: summary =  18217 in 00:12:16 =   24.8/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:19:30,006 INFO o.a.j.r.Summariser: summary +   2973 in 00:00:30 =   99.1/s Avg:     6 Min:     0 Max:    98 Err:     0 (0.00%) Active: 100 Started: 350 Finished: 250
+2026-11-18 15:19:30,007 INFO o.a.j.r.Summariser: summary =  21190 in 00:12:46 =   27.7/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:19:42,878 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-56
+2026-11-18 15:19:43,158 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-91
+2026-11-18 15:19:43,287 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-5
+2026-11-18 15:19:43,388 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-35
+2026-11-18 15:19:43,411 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-17
+2026-11-18 15:19:43,420 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-23
+2026-11-18 15:19:43,443 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-2
+2026-11-18 15:19:43,454 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-75
+2026-11-18 15:19:43,484 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-58
+2026-11-18 15:19:43,522 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-88
+2026-11-18 15:19:43,531 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-33
+2026-11-18 15:19:43,620 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-8
+2026-11-18 15:19:43,625 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-39
+2026-11-18 15:19:43,625 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-77
+2026-11-18 15:19:43,626 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-40
+2026-11-18 15:19:43,632 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-60
+2026-11-18 15:19:43,648 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-38
+2026-11-18 15:19:43,689 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-96
+2026-11-18 15:19:43,694 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-83
+2026-11-18 15:19:43,708 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-31
+2026-11-18 15:19:43,716 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-66
+2026-11-18 15:19:43,718 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-62
+2026-11-18 15:19:43,738 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-95
+2026-11-18 15:19:43,773 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-89
+2026-11-18 15:19:43,788 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-36
+2026-11-18 15:19:43,812 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-1
+2026-11-18 15:19:43,820 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-55
+2026-11-18 15:19:43,863 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-65
+2026-11-18 15:19:43,885 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-32
+2026-11-18 15:19:43,888 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-63
+2026-11-18 15:19:43,907 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-98
+2026-11-18 15:19:43,909 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-18
+2026-11-18 15:19:43,930 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-70
+2026-11-18 15:19:43,955 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-16
+2026-11-18 15:19:44,072 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-42
+2026-11-18 15:19:44,081 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-9
+2026-11-18 15:19:44,082 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-30
+2026-11-18 15:19:44,090 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-10
+2026-11-18 15:19:44,097 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-84
+2026-11-18 15:19:44,099 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-61
+2026-11-18 15:19:44,100 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-15
+2026-11-18 15:19:44,102 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-67
+2026-11-18 15:19:44,104 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-25
+2026-11-18 15:19:44,187 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-73
+2026-11-18 15:19:44,195 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-28
+2026-11-18 15:19:44,197 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-4
+2026-11-18 15:19:44,213 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-87
+2026-11-18 15:19:44,222 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-69
+2026-11-18 15:19:44,229 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-37
+2026-11-18 15:19:44,234 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-74
+2026-11-18 15:19:44,236 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-100
+2026-11-18 15:19:44,263 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-29
+2026-11-18 15:19:44,289 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-85
+2026-11-18 15:19:44,300 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-94
+2026-11-18 15:19:44,301 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-49
+2026-11-18 15:19:44,302 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-92
+2026-11-18 15:19:44,314 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-24
+2026-11-18 15:19:44,318 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-99
+2026-11-18 15:19:44,332 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-51
+2026-11-18 15:19:44,337 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-81
+2026-11-18 15:19:44,364 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-68
+2026-11-18 15:19:44,365 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-43
+2026-11-18 15:19:44,373 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-14
+2026-11-18 15:19:44,374 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-82
+2026-11-18 15:19:44,454 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-93
+2026-11-18 15:19:44,459 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-48
+2026-11-18 15:19:44,464 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-20
+2026-11-18 15:19:44,500 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-44
+2026-11-18 15:19:44,501 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-12
+2026-11-18 15:19:44,501 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-13
+2026-11-18 15:19:44,504 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-21
+2026-11-18 15:19:44,505 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-76
+2026-11-18 15:19:44,506 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-79
+2026-11-18 15:19:44,506 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-45
+2026-11-18 15:19:44,506 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-11
+2026-11-18 15:19:44,509 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-64
+2026-11-18 15:19:44,510 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-27
+2026-11-18 15:19:44,513 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-90
+2026-11-18 15:19:44,518 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-34
+2026-11-18 15:19:44,531 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-41
+2026-11-18 15:19:44,611 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-53
+2026-11-18 15:19:44,618 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-86
+2026-11-18 15:19:44,619 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-3
+2026-11-18 15:19:44,619 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-26
+2026-11-18 15:19:44,620 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-22
+2026-11-18 15:19:44,624 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-78
+2026-11-18 15:19:44,632 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-50
+2026-11-18 15:19:44,634 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-97
+2026-11-18 15:19:44,636 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-7
+2026-11-18 15:19:44,636 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-46
+2026-11-18 15:19:44,636 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-6
+2026-11-18 15:19:44,640 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-59
+2026-11-18 15:19:44,642 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-52
+2026-11-18 15:19:44,644 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-19
+2026-11-18 15:19:44,646 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-47
+2026-11-18 15:19:44,653 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-54
+2026-11-18 15:19:44,675 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-71
+2026-11-18 15:19:44,681 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-72
+2026-11-18 15:19:44,704 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-57
+2026-11-18 15:19:44,720 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Spike 100 VUs 8-80
+2026-11-18 15:19:44,741 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-1
+2026-11-18 15:19:45,241 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-2
+2026-11-18 15:19:45,740 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-3
+2026-11-18 15:19:46,240 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-4
+2026-11-18 15:19:46,741 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-5
+2026-11-18 15:19:47,241 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-6
+2026-11-18 15:19:47,740 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-7
+2026-11-18 15:19:48,241 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-8
+2026-11-18 15:19:48,741 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-9
+2026-11-18 15:19:49,240 INFO o.a.j.t.JMeterThread: Thread started: Spike C3 - Recovery 10 VUs 9-10
+2026-11-18 15:20:00,161 INFO o.a.j.r.Summariser: summary +   1593 in 00:00:30 =   52.8/s Avg:    10 Min:     0 Max:   140 Err:     0 (0.00%) Active: 10 Started: 360 Finished: 350
+2026-11-18 15:20:00,161 INFO o.a.j.r.Summariser: summary =  22783 in 00:13:16 =   28.6/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:20:30,044 INFO o.a.j.r.Summariser: summary +    291 in 00:00:30 =    9.7/s Avg:     7 Min:     1 Max:   153 Err:     0 (0.00%) Active: 10 Started: 360 Finished: 350
+2026-11-18 15:20:30,044 INFO o.a.j.r.Summariser: summary =  23074 in 00:13:46 =   27.9/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:21:00,032 INFO o.a.j.r.Summariser: summary +    292 in 00:00:30 =    9.7/s Avg:     6 Min:     1 Max:    80 Err:     0 (0.00%) Active: 10 Started: 360 Finished: 350
+2026-11-18 15:21:00,032 INFO o.a.j.r.Summariser: summary =  23366 in 00:14:16 =   27.3/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:21:30,014 INFO o.a.j.r.Summariser: summary +    295 in 00:00:30 =    9.8/s Avg:     5 Min:     1 Max:    65 Err:     0 (0.00%) Active: 10 Started: 360 Finished: 350
+2026-11-18 15:21:30,015 INFO o.a.j.r.Summariser: summary =  23661 in 00:14:46 =   26.7/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:21:43,435 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-6
+2026-11-18 15:21:43,941 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-4
+2026-11-18 15:21:44,022 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-3
+2026-11-18 15:21:44,182 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-7
+2026-11-18 15:21:44,223 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-1
+2026-11-18 15:21:44,225 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-8
+2026-11-18 15:21:44,495 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-9
+2026-11-18 15:21:44,517 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-2
+2026-11-18 15:21:44,624 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-5
+2026-11-18 15:21:44,681 INFO o.a.j.t.JMeterThread: Thread finished: Spike C3 - Recovery 10 VUs 9-10
+2026-11-18 15:21:44,681 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-11-18 15:21:44,681 INFO o.a.j.s.FileServer: Close: data/e2e_data.csv
+2026-11-18 15:21:44,686 INFO o.a.j.r.Summariser: summary +    148 in 00:00:15 =   10.1/s Avg:     4 Min:     1 Max:    17 Err:     0 (0.00%) Active: 0 Started: 360 Finished: 360
+2026-11-18 15:21:44,686 INFO o.a.j.r.Summariser: summary =  23809 in 00:15:00 =   26.4/s Avg:     6 Min:     0 Max:   177 Err:     0 (0.00%)
+2026-11-18 15:21:44,686 INFO o.a.j.JMeter: Generating Dashboard
+2026-11-18 15:21:44,686 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2026-11-18 15:21:44,774 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2026-11-18 15:21:46,530 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2026-11-18 15:21:46,530 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2026-11-18 15:21:46,536 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2026-11-18 15:21:46,536 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2026-11-18 15:21:46,563 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2026-11-18 15:21:46,569 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2026-11-18 15:21:46,569 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2026-11-18 15:21:46,569 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2026-11-18 15:21:47,162 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2026-11-18 15:21:47,166 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2026-11-18 15:21:47,168 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2026-11-18 15:21:47,168 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2026-11-18 15:21:47,783 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2026-11-18 15:21:47,788 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 166663 samples
+2026-11-18 15:21:47,788 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2026-11-18 15:21:47,788 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2026-11-18 15:21:47,788 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2026-11-18 15:21:47,792 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2026-11-18 15:21:47,792 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2026-11-18 15:21:47,792 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2026-11-18 15:21:47,798 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2026-11-18 15:21:47,803 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2026-11-18 15:21:47,803 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2026-11-18 15:21:47,803 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2026-11-18 15:21:47,804 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 357135 samples
+2026-11-18 15:21:47,804 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 71427 samples
+2026-11-18 15:21:47,804 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 23809 samples
+2026-11-18 15:21:47,804 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 23809 samples produced in 2s 957 ms on channel 0
+2026-11-18 15:21:47,804 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2026-11-18 15:21:48,025 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2026-11-18 15:21:48,025 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2026-11-18 15:21:48,026 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2026-11-18 15:21:48,027 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2026-11-18 15:21:48,027 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to C:\HCMUS\hk7\Testing\hw5\results\spike\html\statistics.json
+2026-11-18 15:21:48,137 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2026-11-18 15:21:48,144 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: C:\HCMUS\hk7\Testing\hw5\results\spike\html
+2026-11-18 15:21:48,414 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: C:\HCMUS\hk7\Testing\hw5\results\spike\html, creating folder structure
+2026-11-18 15:21:48,419 INFO o.a.j.r.d.TemplateVisitor: Copying folder from 'C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\report-template' to 'C:\HCMUS\hk7\Testing\hw5\results\spike\html', got message: C:\HCMUS\hk7\Testing\hw5\results\spike\html, found non empty folder with following content [C:\HCMUS\hk7\Testing\hw5\results\spike\html\statistics.json], will be ignored
+2026-11-18 15:21:49,245 INFO o.a.j.JMeter: Dashboard generated
