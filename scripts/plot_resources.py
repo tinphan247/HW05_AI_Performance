@@ -93,6 +93,12 @@ def main() -> int:
     parser.add_argument("--title", default="Resource monitor")
     args = parser.parse_args()
 
+    if args.out.suffix.lower() != ".svg":
+        raise SystemExit(
+            "plot_resources.py writes SVG text only. Use a .svg output and rasterise it "
+            "with scripts/svg_to_png.py when a real PNG is needed."
+        )
+
     xs, series = read_columns(args.csv)
     width, height = 1200, 760
     parts = [

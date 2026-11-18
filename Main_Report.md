@@ -331,3 +331,33 @@ python scripts\endurance_threshold.py --runs analysis/endurance_50C analysis/end
 | AI audit | `ai_audit/` |
 | Issue drafts | `docs/issues/` |
 | Repro evidence | `evidence/issues/` |
+
+---
+
+## Phụ lục ảnh bằng chứng
+
+Ba report view dưới đây là ảnh render từ chính `.jtl` đã nộp bằng đúng class GUI của JMeter
+(xem `docs/report_view_screenshots.md`), không phải bảng HTML mô phỏng.
+
+### A1. Summary Report - Load
+
+![Summary Report - Load](screenshots/report_views/load_summary.png)
+
+### A2. Aggregate Report - Stress
+
+![Aggregate Report - Stress](screenshots/report_views/stress_aggregate.png)
+
+### A3. View Results Tree - Spike
+
+![View Results Tree - Spike](screenshots/report_views/spike_view_results_tree.png)
+
+### A4. Resource monitor - CPU/RSS của backend, JMeter và system
+
+![Load resources](screenshots/resource/load_resources.png)
+
+![Stress resources](screenshots/resource/stress_resources.png)
+
+![Spike resources](screenshots/resource/spike_resources.png)
+
+![Endurance 100% C resources](screenshots/resource/endurance_100C_resources.png)
+
