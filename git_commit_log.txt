@@ -1,0 +1,47 @@
+﻿# Git commit log - HW05
+# Repo: https://github.com/tinphan247/HW05_AI_Performance
+# Exported: 2026-11-18 16:19:47 +07:00
+# Commits: 7
+
+commit c8f2bcaffa232a1bf8d57470da986a31b50134ba
+Author: tinphan247 <leopard147159@gmail.com>
+Date:   2026-11-16 12:01:50 +0700
+
+    chore: init HW05 repo with implementation plan and preflight evidence
+
+commit fc7e3f1b22b17ea4ce2d3c89f0c675e005c85b80
+Author: tinphan247 <leopard147159@gmail.com>
+Date:   2026-11-16 12:03:49 +0700
+
+    chore: add seed/reset scripts, CSV data, and backend startup finding
+
+commit 54dcb5b33521f2adb849805c5090837c3575a8fe
+Author: tinphan247 <leopard147159@gmail.com>
+Date:   2026-11-16 12:04:39 +0700
+
+    docs: add AI audit protocol and planning/setup entries
+
+commit fd73e49ebfa7476bd2375bd72f11ebb8fca0b48c
+Author: tinphan247 <leopard147159@gmail.com>
+Date:   2026-11-16 12:24:09 +0700
+
+    feat(test-plans): add Load/Stress/Spike/Endurance/Lockout JMX and run tooling
+
+commit 38f795c3bb4043afcfd41f8048029e69d1e68e40
+Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
+Date:   2026-11-18 16:19:13 +0700
+
+    feat(tooling): endurance stats/threshold, issue repro+publish, Task 2 verifier, screenshots harness, Task 3 CI
+
+commit 0cc9cb4efe5259dadc83bba6b7039acc155ca348
+Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
+Date:   2026-11-18 16:19:21 +0700
+
+    feat(evidence): raw JTL/HTML/resource CSV for all runs, report-view screenshots, hardware, issue repro
+
+commit 723d1d5fc8640b63d7d9f815c38c1e9f44bb1a9c
+Author: Phan Trung Tin <tinphan247@users.noreply.github.com>
+Date:   2026-11-18 16:19:30 +0700
+
+    docs: final report, AI audit (with real Task 2 output), critique, Task 2 review, video script
+

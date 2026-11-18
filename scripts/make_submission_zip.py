@@ -55,6 +55,8 @@ def main() -> int:
             if not path.is_file():
                 continue
             rel = path.relative_to(ROOT)
+            if path == out:
+                continue
             if not include(path, rel):
                 continue
             zf.write(path, arcname=str(Path("hw5") / rel))
