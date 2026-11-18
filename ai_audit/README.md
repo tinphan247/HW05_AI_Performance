@@ -22,6 +22,15 @@
 | 001 | 2026-11-16 12:00 ICT | Read HW05 PDF, analyse requirements, write implementation plan, ask clarification questions | `entries/001_planning.md` |
 | 002 | 2026-11-16 12:04 ICT | Apply student's answers; preflight, clean SUT clone, seed/reset/CSV scripts | `entries/002_setup.md` |
 | 003 | 2026-11-16 12:20 ICT | Generate 3 JMX plans + runner/monitor/analysis; pilot validation and fixes | `entries/003_jmx.md` |
+| 004 | 2026-11-16/18 | Official Load/Stress/Spike/Endurance runs; read manifests and resource CSVs | `entries/004_official_runs.md` |
+| 005 | 2026-11-18 16:10 ICT | Task 2: AI reads 6 JTLs, proposes thresholds/bottleneck/optimisations | `entries/005_task2_ai.md` |
+| 006 | 2026-11-18 16:20 ICT | Write report, Task 3 proposal, criteria; final fact-check and packaging | `entries/006_writing.md` |
+
+Transcripts:
+
+| File | Content |
+|---|---|
+| `transcripts/task2_prompt.md` | Verbatim prompt sent to the Task 2 AI (entry 005) |
 
 ## Rules
 

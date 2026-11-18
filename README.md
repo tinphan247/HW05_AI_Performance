@@ -5,9 +5,9 @@
 **SUT:** EShop — https://github.com/ttbhanh/eshop-sut  
 **Submission repo:** https://github.com/tinphan247/HW05_AI_Performance
 
-> **Status:** In progress. Preflight, seed data, three JMX plans and the runner tooling are complete.
-> Load/Stress/Spike/Endurance runs are being executed; **result tables below are filled only from the real `.jtl` logs, resource CSV, and screenshots**.
-> The detailed plan is in `PLAN.md`.
+> **Status:** Official Load, Stress, Spike and Endurance runs completed on 2026-11-16/18.
+> All numbers below come from the submitted `.jtl` logs, `resources.csv` and `manifest.json`.
+> The detailed plan is in `PLAN.md`; the full report is `Main_Report.md`.
 
 ---
 
@@ -82,17 +82,21 @@ A **separate Lockout plan** uses `lockout@eshop.test` with three wrong passwords
 
 ---
 
-## 3. Test summary (to be filled after runs)
+## 3. Test summary
 
 | Scenario | Endpoint groups | VUs / duration | Key result | Status |
 |---|---|---|---|---|
-| Load | Auth + Read + Transactional | TBD | TBD | Not run |
-| Stress | Auth + Read + Transactional | TBD | TBD | Not run |
-| Spike | Auth + Read + Transactional | TBD | TBD | Not run |
-| Endurance | Auth + Read + Transactional | TBD | TBD | Not run |
+| Load | Auth + Read + Transactional | 30 VUs, 600 s | 8.417 samples, 0 lỗi, p95 11 ms, 14,09 samples/s | PASS |
+| Stress | Auth + Read + Transactional | 10-160 VUs, 6 x 120 s | 48.735 samples, 0 lỗi, p95 ≤ 40 ms, tới 150,98 samples/s | PASS |
+| Spike | Auth + Read + Transactional | 10-100-10 VUs, 3 chu kỳ | 23.809 samples, 0 lỗi, p95 17-19 ms lúc spike | PASS |
+| Endurance | Auth + Read + Transactional | 80/120/160 VUs, 720 s mỗi mức | 50C: 39,53 samples/s; 75C: 58,89 samples/s; 100C: 78,89 samples/s; cả 3 mức 0 lỗi | PASS |
 
-- **Endurance threshold:** TBD (max stable RPS, p95/p99, memory ceiling).
-- **Bugs / performance issues:** TBD.
+- **Endurance threshold:** 160 VUs / **78,89 samples/s** steady-state, p95 47 ms, p99 134,69 ms,
+  0 % error, memory ceiling **182,25 MB** backend RSS. Đây là giới hạn của cấu hình đo
+  (JMeter + backend cùng laptop), không phải capacity tuyệt đối của SUT.
+- **Bugs / performance issues:** 8 issue đã tái hiện và publish; xem `docs/issues/` và mục 5 của `Main_Report.md`.
+- **Report:** `Main_Report.md`; **AI audit:** `AI_Audit_Report.md`; **Critique:** `AI_Critique.md`;
+  **Task 2 review:** `Task2_AI_Analysis.md`.
 - **Demo video:** TBD (unlisted YouTube link).
 
 ---
@@ -134,19 +138,26 @@ python scripts\analyze_jtl.py --scenario load --jtl results\load\23120372_Load_2
 
 ---
 
-## 5. Self-assessment (to be filled after evidence is complete)
+## 5. Self-assessment
 
 | No. | Criteria | Grade | Self-assessed |
 |---|---|---:|---:|
-| 1 | Task 1 — Load testing | 30 | TBD |
-| 2 | Task 1 — Stress testing | 20 | TBD |
-| 3 | Task 1 — Spike testing | 20 | TBD |
-| 4 | Task 2 — AI analysis + misinterpretation hunt | 10 | TBD |
-| 5 | Task 3 — Continuous Performance Testing proposal | 10 | TBD |
-| 6 | Agent Skills | 10 | TBD |
-| **Total** | | **100** | **TBD** |
+| 1 | Task 1 — Load testing | 30 | 27 |
+| 2 | Task 1 — Stress testing | 20 | 18 |
+| 3 | Task 1 — Spike testing | 20 | 18 |
+| 4 | Task 2 — AI analysis + misinterpretation hunt | 10 | 9 |
+| 5 | Task 3 — Continuous Performance Testing proposal | 10 | 9 |
+| 6 | Agent Skills | 10 | 8 |
+| **Total** | | **100** | **89** |
 
-> Self-assessed grade is intentionally left as TBD until all required evidence exists. It must be a 3-digit number in the final zip filename.
+Lý do trừ điểm: (1) video thuyết minh ≥ 6 phút và video demo skill chưa được ghi tại thời
+điểm tạo zip, nên Task 1 và Agent Skills bị trừ; (2) bảng xác nhận không trùng workflow với
+thành viên nhóm khác chưa có đủ tên/ workflow của các bạn; (3) chưa có máy load generator thứ
+hai nên chưa tách được bottleneck client/server. Nếu bổ sung video và bảng nhóm, điểm tự đánh
+giá sẽ cao hơn. Điểm này là **89**, tương ứng tên zip `23120372_HW05_AI_Performance_089.zip`.
+
+> Ghi chú: điểm tự đánh giá chỉ có giá trị khi video thực sự được nộp. Nếu thiếu video, phần
+> Task 1 và Agent Skills sẽ bị trừ nhiều hơn con số trên.
 
 ---
 
