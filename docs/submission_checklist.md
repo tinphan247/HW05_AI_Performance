@@ -34,8 +34,8 @@
 1. **Quay video** theo `VIDEO_SCRIPT.md` (≥ 6 phút, thuyết minh tiếng Việt), upload **Unlisted**,
    rồi dán link vào `README.md` và `Main_Report.md` mục 8. Không có video thì Task 1 và
    Agent Skills sẽ mất điểm.
-2. **Bổ sung bảng nhóm** trong `docs/group_scope.md` (tên + workflow của các thành viên) để
-   chứng minh không trùng workflow. Hiện bảng còn TBD.
+2. **Bài làm cá nhân** đã được ghi rõ trong `docs/group_scope.md`: không có thành viên nhóm,
+   không có bảng so sánh chéo và không bịa tên/ID của người khác.
 3. Sau khi thêm link video: tạo lại PDF `reports/Main_Report.pdf`, commit/push, và tạo lại zip.
 
 ## Ghi chú về bằng chứng

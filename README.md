@@ -20,8 +20,8 @@
 | Seed dataset | Approved: seed additional test users/products via an external script (no SUT code changes) |
 | Second load-generator machine | Not available; JMeter and backend run on the same host |
 | AI tool | Declared by actual model used in the session (OpenCode / DeepSeek V4.1 Flash Free when applicable) |
-| Group workflow | Student confirmed no duplicate workflow; member list still to be recorded in `docs/group_scope.md` |
-| Video | Deferred; will be recorded and uploaded as unlisted YouTube before submission |
+| Group workflow | Individual submission: no group members, no cross-member comparison (`docs/group_scope.md`) |
+| Video | **Not recorded yet**; must be recorded and uploaded as unlisted YouTube before submission |
 | Deadline | “Next week” (exact Moodle deadline to be added when confirmed) |
 
 ---
@@ -97,7 +97,7 @@ A **separate Lockout plan** uses `lockout@eshop.test` with three wrong passwords
 - **Bugs / performance issues:** 8 issue đã tái hiện và publish; xem `docs/issues/` và mục 5 của `Main_Report.md`.
 - **Report:** `Main_Report.md`; **AI audit:** `AI_Audit_Report.md`; **Critique:** `AI_Critique.md`;
   **Task 2 review:** `Task2_AI_Analysis.md`.
-- **Demo video:** TBD (unlisted YouTube link).
+- **Demo video:** **chưa quay** (sẽ là unlisted YouTube; script quay ở `VIDEO_SCRIPT.md`).
 
 ---
 
@@ -150,11 +150,12 @@ python scripts\analyze_jtl.py --scenario load --jtl results\load\23120372_Load_2
 | 6 | Agent Skills | 10 | 8 |
 | **Total** | | **100** | **89** |
 
-Lý do trừ điểm: (1) video thuyết minh ≥ 6 phút và video demo skill chưa được ghi tại thời
-điểm tạo zip, nên Task 1 và Agent Skills bị trừ; (2) bảng xác nhận không trùng workflow với
-thành viên nhóm khác chưa có đủ tên/ workflow của các bạn; (3) chưa có máy load generator thứ
-hai nên chưa tách được bottleneck client/server. Nếu bổ sung video và bảng nhóm, điểm tự đánh
-giá sẽ cao hơn. Điểm này là **89**, tương ứng tên zip `23120372_HW05_AI_Performance_089.zip`.
+Lý do trừ điểm: (1) video thuyết minh ≥ 6 phút và video demo skill **chưa được ghi** tại thời
+điểm tạo zip, nên Task 1 và Agent Skills bị trừ; (2) bài làm **cá nhân**, không có bảng so sánh
+workflow với thành viên nhóm (nếu rubric bắt buộc bảng này thì đây là điểm trừ); (3) chưa có máy
+load generator thứ hai nên chưa tách được bottleneck client/server. Nếu bổ sung video, điểm tự
+đánh giá sẽ cao hơn. Điểm này là **89**, tương ứng tên zip
+`23120372_HW05_AI_Performance_089.zip`.
 
 > Ghi chú: điểm tự đánh giá chỉ có giá trị khi video thực sự được nộp. Nếu thiếu video, phần
 > Task 1 và Agent Skills sẽ bị trừ nhiều hơn con số trên.
