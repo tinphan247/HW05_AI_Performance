@@ -39,7 +39,7 @@ $lines = @(
     "| Cores / logical processors | $($cpu.NumberOfCores) / $($cpu.NumberOfLogicalProcessors) |",
     "| Max clock | $($cpu.MaxClockSpeed) MHz |",
     "| RAM total | $ramTotal GB |",
-    "| RAM modules | $($ramModules.Count) x $([math]::Round($ramModules[0].Capacity / 1GB, 1)) GB @ $($ramModules[0].Speed) MT/s |",
+    "| RAM modules | $($ramModules.Count) entries x $([math]::Round($ramModules[0].Capacity / 1GB, 1)) GB @ $($ramModules[0].Speed) MT/s (as reported by WMI) |",
     "| GPU | $($gpu.Name) |",
     "| OS | $($os.Caption) $($os.Version) ($($os.OSArchitecture)) |",
     "| Installed RAM (OS) | $([math]::Round($os.TotalVisibleMemorySize / 1MB, 1)) GB |",

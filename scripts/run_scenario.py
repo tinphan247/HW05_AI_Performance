@@ -132,6 +132,11 @@ def main() -> int:
     parser.add_argument("--no-html", action="store_true")
     parser.add_argument("--skip-reset", action="store_true")
     parser.add_argument("--note", default="")
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        help="Override the result directory (useful for multi-level endurance runs).",
+    )
     args = parser.parse_args()
 
     scenario = args.scenario
@@ -145,7 +150,9 @@ def main() -> int:
     if not plan.exists():
         raise SystemExit(f"Test plan not found: {plan}")
 
-    out_dir = ROOT / "results" / scenario
+    out_dir = args.out_dir if args.out_dir is not None else Path("results") / scenario
+    if not out_dir.is_absolute():
+        out_dir = ROOT / out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
     jtl = out_dir / f"{plan.stem}.jtl"
     log = out_dir / "jmeter.log"

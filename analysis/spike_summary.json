@@ -1,0 +1,284 @@
+{
+  "scenario": "spike",
+  "jtl": "results\\spike\\23120372_Spike_20261118.jtl",
+  "rows": 23809,
+  "start": 1794989205.967,
+  "end": 1794990104.6820002,
+  "wall_seconds": 898.72,
+  "samples_per_second": 26.492,
+  "errors": 0,
+  "error_pct": 0.0,
+  "error_codes": [],
+  "max_active_threads": 100,
+  "groups": {
+    "Spike C1 - Baseline 10 VUs": {
+      "rows": 1141,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 9.638,
+      "wall_seconds": 118.38,
+      "max_active_threads": 10,
+      "latency_ok_ms": {
+        "count": 1141,
+        "min": 1.0,
+        "avg": 4.94,
+        "p50": 3.0,
+        "p90": 12.0,
+        "p95": 13.0,
+        "p99": 19.6,
+        "max": 88.0
+      }
+    },
+    "Spike C1 - Spike 100 VUs": {
+      "rows": 5606,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 93.879,
+      "wall_seconds": 59.71,
+      "max_active_threads": 100,
+      "latency_ok_ms": {
+        "count": 5606,
+        "min": 0.0,
+        "avg": 7.18,
+        "p50": 3.0,
+        "p90": 13.0,
+        "p95": 18.0,
+        "p99": 89.0,
+        "max": 177.0
+      }
+    },
+    "Spike C1 - Recovery 10 VUs": {
+      "rows": 1175,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 9.919,
+      "wall_seconds": 118.46,
+      "max_active_threads": 10,
+      "latency_ok_ms": {
+        "count": 1175,
+        "min": 0.0,
+        "avg": 5.52,
+        "p50": 3.0,
+        "p90": 13.0,
+        "p95": 15.0,
+        "p99": 28.26,
+        "max": 92.0
+      }
+    },
+    "Spike C2 - Baseline 10 VUs": {
+      "rows": 1141,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 9.648,
+      "wall_seconds": 118.27,
+      "max_active_threads": 10,
+      "latency_ok_ms": {
+        "count": 1141,
+        "min": 1.0,
+        "avg": 5.16,
+        "p50": 4.0,
+        "p90": 12.0,
+        "p95": 15.0,
+        "p99": 18.0,
+        "max": 74.0
+      }
+    },
+    "Spike C2 - Spike 100 VUs": {
+      "rows": 5646,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 94.429,
+      "wall_seconds": 59.79,
+      "max_active_threads": 100,
+      "latency_ok_ms": {
+        "count": 5646,
+        "min": 0.0,
+        "avg": 6.86,
+        "p50": 4.0,
+        "p90": 14.0,
+        "p95": 17.75,
+        "p99": 59.0,
+        "max": 129.0
+      }
+    },
+    "Spike C2 - Recovery 10 VUs": {
+      "rows": 1150,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 9.681,
+      "wall_seconds": 118.79,
+      "max_active_threads": 10,
+      "latency_ok_ms": {
+        "count": 1150,
+        "min": 1.0,
+        "avg": 5.3,
+        "p50": 4.0,
+        "p90": 12.0,
+        "p95": 15.0,
+        "p99": 20.0,
+        "max": 84.0
+      }
+    },
+    "Spike C3 - Baseline 10 VUs": {
+      "rows": 1126,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 9.441,
+      "wall_seconds": 119.27,
+      "max_active_threads": 10,
+      "latency_ok_ms": {
+        "count": 1126,
+        "min": 1.0,
+        "avg": 5.39,
+        "p50": 4.0,
+        "p90": 13.0,
+        "p95": 16.0,
+        "p99": 20.0,
+        "max": 70.0
+      }
+    },
+    "Spike C3 - Spike 100 VUs": {
+      "rows": 5678,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 95.817,
+      "wall_seconds": 59.26,
+      "max_active_threads": 100,
+      "latency_ok_ms": {
+        "count": 5678,
+        "min": 0.0,
+        "avg": 7.56,
+        "p50": 4.0,
+        "p90": 15.0,
+        "p95": 19.0,
+        "p99": 68.46,
+        "max": 140.0
+      }
+    },
+    "Spike C3 - Recovery 10 VUs": {
+      "rows": 1146,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 9.642,
+      "wall_seconds": 118.85,
+      "max_active_threads": 10,
+      "latency_ok_ms": {
+        "count": 1146,
+        "min": 1.0,
+        "avg": 6.42,
+        "p50": 4.0,
+        "p90": 14.0,
+        "p95": 16.0,
+        "p99": 81.1,
+        "max": 153.0
+      }
+    }
+  },
+  "labels": {
+    "GET /api/products (list)": {
+      "rows": 3559,
+      "errors": 0,
+      "rps": 3.961,
+      "latency_ok_ms": {
+        "count": 3559,
+        "min": 1.0,
+        "avg": 6.86,
+        "p50": 5.0,
+        "p90": 9.0,
+        "p95": 15.0,
+        "p99": 57.42,
+        "max": 164.0
+      }
+    },
+    "GET /api/products?search": {
+      "rows": 3506,
+      "errors": 0,
+      "rps": 3.906,
+      "latency_ok_ms": {
+        "count": 3506,
+        "min": 1.0,
+        "avg": 6.57,
+        "p50": 4.0,
+        "p90": 9.0,
+        "p95": 14.0,
+        "p99": 73.85,
+        "max": 177.0
+      }
+    },
+    "POST /api/login": {
+      "rows": 3463,
+      "errors": 0,
+      "rps": 3.864,
+      "latency_ok_ms": {
+        "count": 3463,
+        "min": 1.0,
+        "avg": 5.15,
+        "p50": 3.0,
+        "p90": 8.0,
+        "p95": 14.0,
+        "p99": 57.38,
+        "max": 176.0
+      }
+    },
+    "GET /api/products/{id}": {
+      "rows": 3410,
+      "errors": 0,
+      "rps": 3.809,
+      "latency_ok_ms": {
+        "count": 3410,
+        "min": 1.0,
+        "avg": 4.24,
+        "p50": 2.0,
+        "p90": 7.0,
+        "p95": 12.0,
+        "p99": 46.91,
+        "max": 157.0
+      }
+    },
+    "POST /api/cart": {
+      "rows": 3348,
+      "errors": 0,
+      "rps": 3.743,
+      "latency_ok_ms": {
+        "count": 3348,
+        "min": 0.0,
+        "avg": 1.94,
+        "p50": 2.0,
+        "p90": 3.0,
+        "p95": 3.0,
+        "p99": 7.0,
+        "max": 100.0
+      }
+    },
+    "POST /api/checkout": {
+      "rows": 3289,
+      "errors": 0,
+      "rps": 3.689,
+      "latency_ok_ms": {
+        "count": 3289,
+        "min": 7.0,
+        "avg": 17.11,
+        "p50": 13.0,
+        "p90": 20.0,
+        "p95": 34.0,
+        "p99": 91.0,
+        "max": 162.0
+      }
+    },
+    "GET /api/orders/my-orders": {
+      "rows": 3234,
+      "errors": 0,
+      "rps": 3.63,
+      "latency_ok_ms": {
+        "count": 3234,
+        "min": 1.0,
+        "avg": 5.25,
+        "p50": 3.0,
+        "p90": 8.0,
+        "p95": 13.0,
+        "p99": 59.67,
+        "max": 152.0
+      }
+    }
+  }
+}

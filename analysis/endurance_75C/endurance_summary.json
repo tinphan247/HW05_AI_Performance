@@ -1,0 +1,140 @@
+{
+  "scenario": "endurance",
+  "jtl": "results\\endurance_75C\\23120372_Endurance_20261118.jtl",
+  "rows": 40762,
+  "start": 1794990904.658,
+  "end": 1794991622.2329998,
+  "wall_seconds": 717.57,
+  "samples_per_second": 56.805,
+  "errors": 0,
+  "error_pct": 0.0,
+  "error_codes": [],
+  "max_active_threads": 120,
+  "groups": {
+    "all": {
+      "rows": 40762,
+      "errors": 0,
+      "error_pct": 0.0,
+      "rps": 56.805,
+      "wall_seconds": 717.57,
+      "max_active_threads": 120,
+      "latency_ok_ms": {
+        "count": 40762,
+        "min": 0.0,
+        "avg": 9.47,
+        "p50": 2.0,
+        "p90": 11.0,
+        "p95": 22.0,
+        "p99": 134.39,
+        "max": 1157.0
+      }
+    }
+  },
+  "labels": {
+    "GET /api/products (list)": {
+      "rows": 5874,
+      "errors": 0,
+      "rps": 8.188,
+      "latency_ok_ms": {
+        "count": 5874,
+        "min": 1.0,
+        "avg": 8.51,
+        "p50": 3.0,
+        "p90": 9.0,
+        "p95": 17.0,
+        "p99": 121.81,
+        "max": 1112.0
+      }
+    },
+    "GET /api/products?search": {
+      "rows": 5855,
+      "errors": 0,
+      "rps": 8.182,
+      "latency_ok_ms": {
+        "count": 5855,
+        "min": 1.0,
+        "avg": 8.76,
+        "p50": 3.0,
+        "p90": 8.0,
+        "p95": 17.0,
+        "p99": 121.92,
+        "max": 1142.0
+      }
+    },
+    "POST /api/login": {
+      "rows": 5841,
+      "errors": 0,
+      "rps": 8.171,
+      "latency_ok_ms": {
+        "count": 5841,
+        "min": 1.0,
+        "avg": 8.36,
+        "p50": 2.0,
+        "p90": 7.0,
+        "p95": 18.0,
+        "p99": 146.8,
+        "max": 1157.0
+      }
+    },
+    "GET /api/products/{id}": {
+      "rows": 5826,
+      "errors": 0,
+      "rps": 8.191,
+      "latency_ok_ms": {
+        "count": 5826,
+        "min": 0.0,
+        "avg": 8.64,
+        "p50": 2.0,
+        "p90": 7.0,
+        "p95": 17.0,
+        "p99": 162.75,
+        "max": 1096.0
+      }
+    },
+    "POST /api/cart": {
+      "rows": 5811,
+      "errors": 0,
+      "rps": 8.191,
+      "latency_ok_ms": {
+        "count": 5811,
+        "min": 0.0,
+        "avg": 2.81,
+        "p50": 1.0,
+        "p90": 2.0,
+        "p95": 3.0,
+        "p99": 56.9,
+        "max": 534.0
+      }
+    },
+    "POST /api/checkout": {
+      "rows": 5789,
+      "errors": 0,
+      "rps": 8.184,
+      "latency_ok_ms": {
+        "count": 5789,
+        "min": 6.0,
+        "avg": 20.5,
+        "p50": 10.0,
+        "p90": 27.2,
+        "p95": 78.0,
+        "p99": 218.12,
+        "max": 1015.0
+      }
+    },
+    "GET /api/orders/my-orders": {
+      "rows": 5766,
+      "errors": 0,
+      "rps": 8.179,
+      "latency_ok_ms": {
+        "count": 5766,
+        "min": 1.0,
+        "avg": 8.75,
+        "p50": 2.0,
+        "p90": 7.0,
+        "p95": 16.75,
+        "p99": 138.0,
+        "max": 1082.0
+      }
+    }
+  }
+}

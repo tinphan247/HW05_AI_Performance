@@ -1,0 +1,92 @@
+# Continuous performance gate (prototype for HW05 Task 3).
+# Copy this file to .github/workflows/perf-gate.yml in a repository that
+# contains the backend and test plans. It is intentionally a short PR gate;
+# nightly full stress is a separate schedule.
+
+name: perf-gate
+
+on:
+  pull_request:
+    paths:
+      - "backend/**"
+      - "test-plans/**"
+      - "data/**"
+      - "scripts/**"
+      - "ci/**"
+  workflow_dispatch:
+
+concurrency:
+  group: perf-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke-load:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: sut/eshop-sut/backend/package-lock.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install JMeter
+        run: |
+          curl -fsSL https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.tgz -o /tmp/jmeter.tgz
+          tar -xzf /tmp/jmeter.tgz -C /opt
+          echo "/opt/apache-jmeter-5.6.3/bin" >> "$GITHUB_PATH"
+
+      - name: Install backend dependencies
+        run: npm ci
+        working-directory: sut/eshop-sut/backend
+
+      - name: Start backend (port 3100) and seed
+        run: |
+          PORT=3100 node server.js > /tmp/backend.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://localhost:3100/api/products > /dev/null && break
+            sleep 1
+          done
+          python scripts/seed_perf_data.py
+          python scripts/generate_csv.py
+
+      - name: Run smoke load (5 min, fixed dataset)
+        run: |
+          python scripts/run_scenario.py --scenario load \
+            --threads 10 --ramp 30 --duration 300 --no-html \
+            --note "CI PR gate ${GITHUB_SHA}"
+
+      - name: Analyse JTL
+        run: |
+          JTL=$(ls results/load/*.jtl | head -n1)
+          python scripts/analyze_jtl.py --scenario load --jtl "$JTL"
+
+      - name: Compare with baseline
+        run: |
+          python ci/compare_baseline.py \
+            --baseline ci/baseline.json \
+            --current analysis/load_summary.json | tee /tmp/perf-gate.md
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: perf-evidence-${{ github.sha }}
+          path: |
+            results/load/**
+            analysis/load_**
+            /tmp/backend.log
+          retention-days: 30
+
+      - name: Comment PR
+        if: always() && github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: /tmp/perf-gate.md

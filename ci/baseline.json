@@ -1,0 +1,145 @@
+{
+  "source": "results/load/23120372_Load_20261116.jtl",
+  "scenario": "load",
+  "note": "Accepted official Load run (30 VUs, 600 s) on DESKTOP-BCS88BQ. Used as the CI regression baseline.",
+  "metrics": {
+    "scenario": "load",
+    "jtl": "results\\load\\23120372_Load_20261116.jtl",
+    "rows": 8417,
+    "start": 1794806573.679,
+    "end": 1794807171.148,
+    "wall_seconds": 597.47,
+    "samples_per_second": 14.088,
+    "errors": 0,
+    "error_pct": 0.0,
+    "error_codes": [],
+    "max_active_threads": 30,
+    "groups": {
+      "all": {
+        "rows": 8417,
+        "errors": 0,
+        "error_pct": 0.0,
+        "rps": 14.088,
+        "wall_seconds": 597.47,
+        "max_active_threads": 30,
+        "latency_ok_ms": {
+          "count": 8417,
+          "min": 0.0,
+          "avg": 5.17,
+          "p50": 2.0,
+          "p90": 9.0,
+          "p95": 11.0,
+          "p99": 15.0,
+          "max": 1619.0
+        }
+      }
+    },
+    "labels": {
+      "GET /api/products (list)": {
+        "rows": 1214,
+        "errors": 0,
+        "rps": 2.033,
+        "latency_ok_ms": {
+          "count": 1214,
+          "min": 1.0,
+          "avg": 4.36,
+          "p50": 3.0,
+          "p90": 5.0,
+          "p95": 5.0,
+          "p99": 8.0,
+          "max": 1279.0
+        }
+      },
+      "GET /api/products?search": {
+        "rows": 1210,
+        "errors": 0,
+        "rps": 2.034,
+        "latency_ok_ms": {
+          "count": 1210,
+          "min": 1.0,
+          "avg": 4.31,
+          "p50": 3.0,
+          "p90": 4.0,
+          "p95": 5.0,
+          "p99": 7.91,
+          "max": 1324.0
+        }
+      },
+      "POST /api/login": {
+        "rows": 1206,
+        "errors": 0,
+        "rps": 2.032,
+        "latency_ok_ms": {
+          "count": 1206,
+          "min": 1.0,
+          "avg": 5.53,
+          "p50": 2.0,
+          "p90": 3.0,
+          "p95": 4.0,
+          "p99": 10.0,
+          "max": 1385.0
+        }
+      },
+      "GET /api/products/{id}": {
+        "rows": 1202,
+        "errors": 0,
+        "rps": 2.04,
+        "latency_ok_ms": {
+          "count": 1202,
+          "min": 0.0,
+          "avg": 3.19,
+          "p50": 2.0,
+          "p90": 2.9,
+          "p95": 3.0,
+          "p99": 7.0,
+          "max": 1619.0
+        }
+      },
+      "POST /api/cart": {
+        "rows": 1201,
+        "errors": 0,
+        "rps": 2.039,
+        "latency_ok_ms": {
+          "count": 1201,
+          "min": 0.0,
+          "avg": 1.36,
+          "p50": 1.0,
+          "p90": 2.0,
+          "p95": 2.0,
+          "p99": 3.0,
+          "max": 4.0
+        }
+      },
+      "POST /api/checkout": {
+        "rows": 1196,
+        "errors": 0,
+        "rps": 2.033,
+        "latency_ok_ms": {
+          "count": 1196,
+          "min": 6.0,
+          "avg": 14.15,
+          "p50": 10.0,
+          "p90": 13.0,
+          "p95": 15.0,
+          "p99": 43.15,
+          "max": 1404.0
+        }
+      },
+      "GET /api/orders/my-orders": {
+        "rows": 1188,
+        "errors": 0,
+        "rps": 2.022,
+        "latency_ok_ms": {
+          "count": 1188,
+          "min": 1.0,
+          "avg": 3.29,
+          "p50": 2.0,
+          "p90": 3.0,
+          "p95": 3.0,
+          "p99": 9.0,
+          "max": 897.0
+        }
+      }
+    }
+  }
+}

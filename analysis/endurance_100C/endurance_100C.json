@@ -1,0 +1,55 @@
+{
+  "label": "100C",
+  "run_dir": "results\\endurance_100C",
+  "jtl": "results\\endurance_100C\\23120372_Endurance_20261118.jtl",
+  "window": {
+    "warmup_s": 90.0,
+    "cooldown_s": 30.0,
+    "steady_start": 90.0,
+    "steady_end": 689.2,
+    "duration_s": 599.2
+  },
+  "throughput": {
+    "rps_mean": 78.887,
+    "rps_sd": 7.959,
+    "cv_pct": 10.09,
+    "rps_min": 13,
+    "rps_max": 104,
+    "rps30_mean": 78.887,
+    "rps30_sd": 1.01,
+    "cv30_pct": 1.28,
+    "rps30_min": 76.5,
+    "rps30_max": 80.567
+  },
+  "latency_ms": {
+    "p50": 2.0,
+    "p95": 47.0,
+    "p99": 134.69,
+    "avg": 11.08
+  },
+  "errors": {
+    "count": 0,
+    "pct": 0.0
+  },
+  "memory_mb": {
+    "start": 58.21,
+    "warmup_end": 115.04,
+    "run_end": 179.77,
+    "max": 182.25,
+    "max_at_s": 681.02,
+    "steady_slope_per_min": 3.334,
+    "late_slope_per_min": 0.398,
+    "late_start_rss": 179.89,
+    "late_growth_pct": -0.1,
+    "warmup_to_end_pct": 56.3
+  },
+  "backend_cpu_pct": {
+    "avg": 15.86,
+    "max": 26.5
+  },
+  "system_cpu_pct": {
+    "avg": 36.57,
+    "max": 99.7
+  },
+  "max_active_threads": 160
+}
