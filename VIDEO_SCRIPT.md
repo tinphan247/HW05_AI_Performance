@@ -195,8 +195,9 @@ python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl r
 5. **Không bấm Save / Ctrl+S.**
 
 > **CẢNH BÁO:** JMeter GUI sẽ thêm/xóa thuộc tính XML và làm SHA-256 của JMX khác manifest
-> của run chính thức. Nếu cần thêm listener, thêm xong chọn **Don't Save** khi đóng.
-> Nếu muốn lưu, dùng **File → Save As** thành `test-plans\video_demo.jmx`.
+> của run chính thức. Năm file JMX chính thức đã được đặt **read-only** để GUI không ghi đè.
+> Nếu cần thêm listener, thêm xong chọn **Don't Save** khi đóng. Nếu muốn lưu, dùng
+> **File → Save As** thành `test-plans\video_demo.jmx`.
 
 **Lời thoại:**
 
@@ -364,7 +365,9 @@ manifest của run chính thức (`530985...`), vì GUI thêm/xóa thuộc tính
 
 **Cách sửa:**
 1. Không bấm Save/Ctrl+S trên JMX chính thức.
-2. Nếu cần listener, chọn **Don't Save** khi đóng, hoặc **Save As** `test-plans\video_demo.jmx`.
+2. Năm file JMX chính thức đã được đặt **read-only**; nếu JMeter báo không lưu được, đó là
+   hành vi mong muốn. Nếu cần listener, chọn **Don't Save** khi đóng, hoặc **Save As**
+   `test-plans\video_demo.jmx`.
 3. Khôi phục bản gốc nếu lỡ lưu:
    ```powershell
    git checkout -- test-plans\23120372_Load_20261116.jmx
@@ -375,6 +378,10 @@ manifest của run chính thức (`530985...`), vì GUI thêm/xóa thuộc tính
    ```
    Phải ra `530985258d2e8b0aec1e0a11247a83a5997c3b9c3cd78d32e9f0e8f6e66ac801`.
    Nếu ra hash khác do CRLF, chuyển file về LF (đã có `.gitattributes` khóa `*.jmx`).
+5. Nếu cần sửa JMX để thử nghiệm, bỏ read-only trước:
+   ```powershell
+   Set-ItemProperty -Path test-plans\23120372_Load_20261116.jmx -Name IsReadOnly -Value $false
+   ```
 
 ## D3. Port 3100 bận
 
