@@ -1,280 +1,411 @@
-# Video script - HW05 demo (8:00-8:30 phút, thuyết minh tiếng Việt)
+# VIDEO_SCRIPT - HW05 Performance Testing (8:00-8:30)
 
-> **Yêu cầu đề:** ≥ 6 phút, unlisted trên YouTube, giọng **của chính bạn** (không TTS),
-> cùng một frame phải có **tool JMeter + resource monitor**, narration tiếng Việt.
-> **Không** dùng video của bài khác; quay mới.
+**Sinh viên:** Phan Trung Tin - 23120372
+**Máy quay:** DESKTOP-BCS88BQ (Dell Latitude 7420, i5-1145G7, 16 GB, Windows 11 Pro)
+**Yêu cầu:** ≥ 6 phút, unlisted YouTube, giọng tiếng Việt của chính bạn, **JMeter + resource monitor
+trong cùng một frame**.
 
-Mục tiêu của video này: chứng minh rằng toàn bộ bằng chứng trong bài là **chạy thật**,
-bắt đầu từ lúc khởi tạo backend. Video chia thành 8 phần; tổng thời lượng ~8 phút.
-Nếu muốn ngắn hơn, có thể bỏ phần 6 (Task 2/3) xuống 45 s, nhưng không được dưới 6 phút.
+> Tài liệu này là hướng dẫn thao tác từng bước. Cứ làm tuần tự từ trên xuống, không cần nhớ gì.
+> Các số trong ngoặc là thời lượng mục tiêu; tổng ~8:15.
 
 ---
 
-## 0. Chuẩn bị trước khi bấm record (5 phút)
+# PHẦN A - CHUẨN BỊ TRƯỚC KHI BẤM RECORD
 
-### 0.1. Máy và màn hình
+## A1. Kiểm tra port 3100 và backend cũ
 
-- Dùng đúng máy **DESKTOP-BCS88BQ** (hostname phải xuất hiện trong video).
-- Mở **Task Manager → tab Performance** (CPU + Memory) và để nó luôn nhìn thấy.
-- Tắt thông báo Windows, trình duyệt, chat. Đóng mọi app không cần thiết.
-- Độ phân giải màn hình ≥ 1920×1080; OBS/Game Bar quay full desktop.
-- Micro kiểm tra bằng cách nói 5 giây rồi phát lại.
+Mở **PowerShell** tại `C:\HCMUS\hk7\Testing\hw5`:
 
-### 0.2. Bố cục cửa sổ (một màn hình)
+```powershell
+Get-NetTCPConnection -LocalPort 3100 -State Listen -ErrorAction SilentlyContinue
+```
+
+- Nếu **không có kết quả**: tốt, port đang trống.
+- Nếu **có PID**: tắt backend cũ trước khi quay để cảnh khởi động là thật:
+
+```powershell
+$c = Get-NetTCPConnection -LocalPort 3100 -State Listen
+Stop-Process -Id $c.OwningProcess -Force
+```
+
+## A2. Xóa output demo cũ (để cảnh chạy là mới)
+
+```powershell
+Remove-Item results\video_demo -Recurse -Force -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force -Path results\video_demo | Out-Null
+```
+
+## A3. Mở sẵn các cửa sổ (chưa thao tác)
+
+Mở theo đúng thứ tự này:
+
+1. **Terminal A** (backend):
+   ```powershell
+   cd C:\HCMUS\hk7\Testing\hw5\sut\eshop-sut\backend
+   ```
+2. **Terminal B** (seed/verify):
+   ```powershell
+   cd C:\HCMUS\hk7\Testing\hw5
+   ```
+3. **Terminal C** (monitor):
+   ```powershell
+   cd C:\HCMUS\hk7\Testing\hw5
+   ```
+4. **Task Manager** → tab **Performance** → chuột phải CPU graph → **Show logical processors**.
+5. **Chrome/Edge** mở sẵn 4 tab:
+   - `results\load\html\index.html`
+   - `results\stress\html\index.html`
+   - `results\spike\html\index.html`
+   - `https://github.com/tinphan247/HW05_AI_Performance/issues`
+6. **VS Code** mở sẵn:
+   - `README.md`
+   - `Task2_AI_Analysis.md`
+   - `docs\task3_continuous_testing.md`
+   - `skills\jmeter-perf-testing\SKILL.md`
+7. Mở sẵn 3 ảnh report view:
+   - `screenshots\report_views\load_summary.png`
+   - `screenshots\report_views\stress_aggregate.png`
+   - `screenshots\report_views\spike_view_results_tree.png`
+
+## A4. Bố cục màn hình khi quay
 
 ```
 +--------------------------------------------------------------+
-|  Top bar: hostname DESKTOP-BCS88BQ | clock | HW05 Performance |
+|  Hostname DESKTOP-BCS88BQ (mở PowerShell gõ hostname)         |
 +---------------------------+----------------------------------+
-|  Trái (55%):              |  Phải (45%):                     |
-|  - Terminal JMeter        |  - Task Manager (Performance)     |
-|  - hoặc JMeter GUI        |  - hoặc terminal monitor_resources |
-|  - hoặc browser results   |                                  |
+|  TRÁI 55%                 |  PHẢI 45%                        |
+|  Terminal / JMeter GUI    |  Task Manager (Performance)       |
+|  hoặc browser kết quả     |  hoặc terminal monitor            |
 +---------------------------+----------------------------------+
 ```
 
-Quy tắc: **luôn nhìn thấy cả JMeter và Task Manager trong cùng frame**.
+Quy tắc bắt buộc: **JMeter và Task Manager luôn nằm trong cùng frame** ở cảnh live run.
 
-### 0.3. Mở sẵn trước khi quay
-
-```powershell
-# Terminal A (sẽ dùng để chạy backend)
-cd C:\HCMUS\hk7\Testing\hw5\sut\eshop-sut\backend
-
-# Terminal B (sẽ dùng để seed / verify)
-cd C:\HCMUS\hk7\Testing\hw5
-
-# Terminal C (sẽ chạy monitor)
-cd C:\HCMUS\hk7\Testing\hw5
-```
-
-Mở sẵn các cửa sổ sau (chỉ mở, chưa chạy):
-
-- `C:\HCMUS\hk7\Testing\hw5\README.md` trong VS Code hoặc browser.
-- `C:\HCMUS\hk7\Testing\hw5\results\load\html\index.html`
-- `C:\HCMUS\hk7\Testing\hw5\results\stress\html\index.html`
-- `C:\HCMUS\hk7\Testing\hw5\results\spike\html\index.html`
-- `C:\HCMUS\hk7\Testing\hw5\screenshots\report_views\load_summary.png`
-- `C:\HCMUS\hk7\Testing\hw5\screenshots\report_views\stress_aggregate.png`
-- `C:\HCMUS\hk7\Testing\hw5\screenshots\report_views\spike_view_results_tree.png`
-- `C:\HCMUS\hk7\Testing\hw5\skills\jmeter-perf-testing\SKILL.md`
-
-### 0.4. Lệnh sẽ dùng trong video (copy sẵn vào Notepad)
+## A5. Lệnh copy sẵn (dán vào Notepad để quay nhanh)
 
 ```powershell
-# 1. Khởi động backend
+# 1. Backend
 cd C:\HCMUS\hk7\Testing\hw5\sut\eshop-sut\backend
 node server.js
 
-# 2. Seed dữ liệu (terminal khác, sau khi backend đã listen)
+# 2. Seed
 cd C:\HCMUS\hk7\Testing\hw5
 python scripts\seed_perf_data.py
 
-# 3. Verify counts
+# 3. Verify
 python -c "import sqlite3; c=sqlite3.connect(r'sut/eshop-sut/backend/database.sqlite'); print('users', c.execute('SELECT COUNT(*) FROM users').fetchone()[0]); print('products', c.execute('SELECT COUNT(*) FROM products').fetchone()[0]); print('orders', c.execute('SELECT COUNT(*) FROM orders').fetchone()[0])"
 
-# 4. Live smoke run (5 VUs, 60 s) - monitor ở terminal khác
+# 4. Monitor
 python scripts\monitor_resources.py --out results\video_demo\resources.csv
-cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -n -t test-plans\23120372_Load_20261116.jmx -l results\video_demo\video_load.jtl -j results\video_demo\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
 
-# 5. Skill demo
+# 5. JMeter GUI (5 VUs, 60 s) - dùng cmd /c, KHÔNG gọi .bat trực tiếp
+cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -t test-plans\23120372_Load_20261116.jmx -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
+
+# 6. Skill demo
 python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl results\load\23120372_Load_20261116.jtl
 ```
 
 ---
 
-## 1. Part 0 — Giới thiệu (0:00–0:30)
+# PHẦN B - KỊCH BẢN QUAY TỪNG CẢNH
 
-**Màn hình:** Desktop, hostname **DESKTOP-BCS88BQ** nhìn thấy; Task Manager mở ở góc phải.
+## Cảnh 1 - Intro (0:00-0:25)
 
-**Narration (tiếng Việt):**
+**Màn hình:** Desktop, mở PowerShell gõ `hostname` để thấy `DESKTOP-BCS88BQ`; Task Manager mở bên phải.
+
+**Thao tác:**
+1. Bấm record.
+2. Gõ `hostname` → Enter.
+3. Chỉ vào tên máy, rồi chỉ Task Manager.
+
+**Lời thoại:**
 
 > "Xin chào, em là Phan Trung Tin, MSSV 23120372. Đây là bài HW05 Performance Testing.
-> SUT là EShop chạy tại localhost port 3100. Máy đo là laptop Dell Latitude 7420,
-> CPU Intel Core i5-1145G7, 4 nhân 8 luồng, RAM 16 GB, Windows 11 Pro.
-> Bài có 3 test plan Load, Stress, Spike cùng một workflow end-to-end, dữ liệu CSV,
-> endurance threshold, AI audit và Agent Skill. Trong video này em bắt đầu từ lúc
-> khởi tạo backend để chứng minh chạy thật."
+> SUT là EShop, chạy localhost port 3100. Máy đo là DESKTOP-BCS88BQ, Dell Latitude 7420,
+> Intel Core i5-1145G7, 4 nhân 8 luồng, RAM 16 GB, Windows 11 Pro.
+> Video này em bắt đầu từ lúc khởi tạo backend để chứng minh toàn bộ là chạy thật."
 
 ---
 
-## 2. Part 1 — Khởi tạo backend (0:30–1:20)
+## Cảnh 2 - Khởi động backend (0:25-1:15)
 
-**Màn hình:** Terminal A chiếm trái, Task Manager phải.
+**Màn hình:** Terminal A bên trái, Task Manager bên phải.
 
 **Thao tác:**
-
-1. Gõ lệnh `cd .../backend` (đã mở sẵn).
-2. Gõ `node server.js`.
-3. Đợi output:
+1. Chuyển sang Terminal A.
+2. Gõ `node server.js` → Enter.
+3. Đợi đến khi thấy đủ 3 dòng:
    ```
    Database initialized and seeded (Phase 2).
    Server is running on http://localhost:3100
    Connected to database
    ```
-4. Chỉ vào Task Manager: CPU và RAM backend chỉ ~vài MB.
+4. Chỉ vào Task Manager: process Node chiếm RAM rất ít (~50 MB).
 
-**Narration:**
+**Lời thoại:**
 
-> "Backend Express + SQLite. Khi khởi động, database.js tự DROP và seed lại DB,
-> nên mọi run đều bắt đầu từ trạng thái sạch. Port là 3100 vì port 3000 đã bị Aptis backend dùng;
-> đây là thay đổi harness test, không phải sửa SUT."
+> "Backend là Express + SQLite. Khi khởi động, file database.js tự DROP và seed lại database,
+> nên mỗi run đều bắt đầu từ trạng thái sạch. Em dùng port 3100 vì port 3000 đã bị Aptis backend
+> chiếm; đây là thay đổi của harness test, không phải sửa code SUT."
+
+**Kiểm tra:** nếu terminal báo `EADDRINUSE`, quay lại A1 tắt process cũ rồi làm lại cảnh này.
 
 ---
 
-## 3. Part 2 — Seed dữ liệu và verify (1:20–2:10)
+## Cảnh 3 - Seed và verify dữ liệu (1:15-2:00)
 
 **Màn hình:** Terminal B.
 
 **Thao tác:**
+1. Chuyển sang Terminal B.
+2. Chạy `python scripts\seed_perf_data.py` → Enter.
+3. Đợi dòng:
+   ```
+   Seed complete: {'users': 503, 'perf_users': 500, 'products': 205, 'perf_products': 200, 'orders': 0}
+   ```
+4. Chạy lệnh verify → Enter.
+5. Đợi 3 dòng: `users 503`, `products 205`, `orders 0`.
 
-1. `python scripts\seed_perf_data.py` → output `Seed complete: ...`.
-2. Chạy lệnh verify counts → `users 503, products 205, orders 0`.
-3. Mở browser `http://localhost:3100/api/products` (hiện JSON, 205 sản phẩm) — không bắt buộc.
+**Lời thoại:**
 
-**Narration:**
-
-> "Seed 500 perf user, 1 lockout user, 200 sản phẩm, 0 đơn hàng. Verify counts khớp manifest.
-> Nếu orders khác 0 thì reset lại backend."
-
----
-
-## 4. Part 3 — Walkthrough JMX plan (2:10–3:00)
-
-**Màn hình:** Mở JMeter GUI (`jmeter.bat`) + file `23120372_Load_20261116.jmx`.
-
-**Thao tác:**
-
-1. Mở JMeter GUI.
-2. File → Open → `test-plans\23120372_Load_20261116.jmx`.
-3. Chỉ các node: Thread Group, CSV Data Set Config, 7 request, Gaussian Random Timer, JSON Extractor, Response Assertion.
-4. Chỉ 3 report view đã dùng: Summary Report (Load), Aggregate Report (Stress), View Results Tree (Spike) — qua ảnh `screenshots/report_views/*.png`.
-
-> **Tuyệt đối không bấm Save / Ctrl+S trên JMX chính thức.** JMeter GUI sẽ thêm/xóa thuộc
-> tính và làm SHA-256 khác manifest của run thật. Nếu cần thêm listener để quay, dùng
-> **File → Save As** thành `test-plans\video_demo.jmx`, hoặc thêm listener rồi chọn
-> **Don't Save** khi đóng. Đã có `.gitattributes` khóa `*.jmx` về LF để tránh lệch hash.
-
-**Narration:**
-
-> "Workflow end-to-end: login, products, search, product detail, cart, checkout, my-orders.
-> CSV `e2e_data.csv` cho email/password/product ID/order payload. Timer ngẫu nhiên
-> 2000 ± 1000 ms, không phải delay cố định. Ba report view khác nhau cho ba scenario."
+> "Em seed 500 perf user, 1 lockout user, 200 sản phẩm và 0 đơn hàng.
+> Verify lại đúng 503 user, 205 product, 0 order. Nếu orders khác 0 thì phải restart backend
+> vì cart và order là trạng thái của run trước."
 
 ---
 
-## 5. Part 4 — Live run ngắn có monitor (3:00–4:20)
+## Cảnh 4 - Mở JMeter GUI và xem test plan (2:00-3:00)
 
-**Màn hình:** Trái = Terminal JMeter + terminal monitor; phải = Task Manager.
+**Màn hình:** JMeter GUI bên trái, Task Manager bên phải.
 
 **Thao tác:**
+1. Mở **Terminal B** (hoặc PowerShell mới).
+2. Chạy lệnh GUI đã copy sẵn ở A5 bước 5:
+   ```powershell
+   cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -t test-plans\23120372_Load_20261116.jmx -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
+   ```
+3. JMeter GUI mở với plan đã load.
+4. Chỉ lần lượt các node:
+   - **Thread Group**: `Load - ${__P(threads,30)} VUs`
+   - **CSV Data Set Config**: trỏ `data/e2e_data.csv`
+   - **7 request**: products → search → login → product detail → cart → checkout → my-orders
+   - **Gaussian Random Timer**: 2000 ± 1000 ms
+   - **JSON Extractor**: lấy token sau login
+   - **Response Assertion**: kiểm tra body
+5. **Không bấm Save / Ctrl+S.**
 
-1. Terminal monitor: `python scripts\monitor_resources.py --out results\video_demo\resources.csv`
-2. Terminal JMeter: lệnh smoke ở §0.4 bước 4.
-3. Trong lúc chạy (60 s): chỉ vào Task Manager khi CPU/RSS backend tăng.
-4. Khi kết thúc, monitor Ctrl+C, JMeter báo `summary = ... in ...s`.
+> **CẢNH BÁO:** JMeter GUI sẽ thêm/xóa thuộc tính XML và làm SHA-256 của JMX khác manifest
+> của run chính thức. Nếu cần thêm listener, thêm xong chọn **Don't Save** khi đóng.
+> Nếu muốn lưu, dùng **File → Save As** thành `test-plans\video_demo.jmx`.
 
-**Narration:**
+**Lời thoại:**
 
-> "Đây là chạy thật, 5 VUs trong 60 giây, để chứng minh pipeline chạy được.
-> Run chính thức dài hơn: Load 10 phút, Stress 12 phút, Spike 15 phút, Endurance 12 phút mỗi mức.
-> Monitor ghi CSV mỗi 2 giây: CPU/RSS của backend, JMeter và system."
+> "Đây là một workflow end-to-end dùng chung cho cả 3 scenario. CSV cung cấp email, password,
+> product ID và order payload. Timer là GaussianRandomTimer 2000 cộng trừ 1000 ms,
+> không phải delay cố định. Ba scenario dùng ba report view khác nhau: Summary Report,
+> Aggregate Report và View Results Tree."
 
 ---
 
-## 6. Part 5 — Kết quả chính thức (4:20–5:40)
+## Cảnh 5 - Live run có Task Manager cùng frame (3:00-4:30)
 
-**Màn hình:** Browser mở HTML dashboard + ảnh report view + terminal `manifest.md`.
+**Màn hình:** Trái = JMeter GUI, phải = Task Manager (Performance). Terminal monitor đặt phía dưới.
 
 **Thao tác:**
+1. Trong JMeter GUI, chuột phải **Test Plan** → **Add** → **Listener** → **Summary Report**.
+2. Sắp xếp để thấy **JMeter + Task Manager** cùng lúc.
+3. Terminal C: chạy monitor:
+   ```powershell
+   python scripts\monitor_resources.py --out results\video_demo\resources.csv
+   ```
+4. Quay lại JMeter, bấm **Start** (nút ▶ xanh).
+5. Trong 60 giây:
+   - Chỉ vào **Summary Report** đang cập nhật số sample.
+   - Chỉ vào **Task Manager**: CPU backend tăng nhẹ, RAM ~50-60 MB.
+   - Chỉ vào terminal monitor: file CSV đang được ghi.
+6. Khi JMeter báo `... end of run`, chuyển sang Terminal C, bấm **Ctrl+C** để dừng monitor.
+7. Chỉ dòng cuối trong Summary Report: `Err: 0 (0.00%)`.
 
-1. Mở `results\load\html\index.html` → chỉ dashboard, RPS, p95, error.
-2. Mở `results\stress\html\index.html` → chỉ S1–S6 và p95.
-3. Mở `results\spike\html\index.html` → chỉ spike 10→100 VUs.
-4. Mở 3 ảnh `screenshots/report_views/*.png` (Summary/Aggregate/View Results Tree).
-5. Chỉ `analysis/endurance_threshold.md`: 3 mức 80/120/160 VUs, tất cả PASS.
+**Lời thoại:**
 
-**Narration (đọc số từ manifest, không nói theo nhớ):**
+> "Đây là chạy thật 5 VUs trong 60 giây, chỉ để chứng minh pipeline hoạt động.
+> Run chính thức dài hơn: Load 10 phút, Stress 12 phút, Spike 15 phút,
+> Endurance 12 phút mỗi mức. Monitor ghi CSV mỗi 2 giây: CPU và RSS của backend,
+> JMeter và toàn hệ thống. Các run chính thức đã có sẵn trong thư mục results."
+
+**Kiểm tra (lần chạy thử 23/11):** 129 samples, 0 lỗi, 100% HTTP 200, 16 đơn hàng,
+max 96 ms, backend RSS ~53 MB. Số của bạn có thể dao động; miễn `Err: 0`.
+
+---
+
+## Cảnh 6 - Kết quả chính thức (4:30-5:45)
+
+**Màn hình:** Chrome/Edge, lần lượt các tab HTML dashboard; sau đó mở 3 ảnh report view.
+
+**Thao tác:**
+1. Tab **Load** → chỉ dashboard: samples, throughput, p95, error.
+2. Tab **Stress** → chỉ bảng S1-S6, p95 từng mức.
+3. Tab **Spike** → chỉ đoạn spike 10 → 100 VUs.
+4. Mở `screenshots\report_views\load_summary.png` → chỉ Summary Report.
+5. Mở `stress_aggregate.png` → chỉ Aggregate Report.
+6. Mở `spike_view_results_tree.png` → chỉ View Results Tree với sample 200 OK.
+7. Mở `analysis\endurance_threshold.md` → chỉ bảng 3 mức và dòng kết luận.
+
+**Lời thoại (đọc số từ manifest, không đọc theo trí nhớ):**
 
 > "Load: 8.417 samples, 0 lỗi, p95 11 ms. Stress: 48.735 samples, 0 lỗi,
 > đỉnh 154,30 req/s tại 160 VUs, p95 38 ms. Spike: 23.809 samples, 0 lỗi,
-> p95 17–19 ms. Endurance: 80, 120, 160 VUs trong 720 s, CV dưới 2,2%,
-> p95 dưới 47 ms. Ngưỡng bền vững là 160 VUs – 78,89 samples/s,
-> memory ceiling 182,25 MB. System CPU chạm 99,5–99,7%, nên đây là giới hạn
+> p95 17 đến 19 ms. Endurance: 80, 120, 160 VUs trong 720 giây, CV dưới 2,2%,
+> p95 dưới 47 ms. Ngưỡng bền vững là 160 VUs, 78,89 samples/s,
+> memory ceiling 182,25 MB. System CPU chạm 99,5 đến 99,7%, nên đây là giới hạn
 > của cấu hình đo, không phải capacity tuyệt đối của SUT."
 
 ---
 
-## 7. Part 6 — Bugs + Task 2/3 (5:40–6:40)
+## Cảnh 7 - Bugs, Task 2, Task 3 (5:45-6:45)
 
-**Màn hình:** Browser mở GitHub Issues + `Task2_AI_Analysis.md` + `docs/task3_continuous_testing.md`.
-
-**Thao tác:**
-
-1. Mở `https://github.com/tinphan247/HW05_AI_Performance/issues` → chỉ 8 issue, #7 và #8 critical.
-2. Mở `Task2_AI_Analysis.md` → chỉ bảng feasible/hallucinated và ví dụ AI bịa JMX.
-3. Mở flow chart `docs/task3_flow.svg`.
-
-**Narration:**
-
-> "Tìm được 8 issue thật, trong đó 2 critical: SQL injection ở search và
-> endpoint product không cần auth. AI đọc số rất tốt nhưng bịa nội dung file JMX
-> và suy CPU throttle từ một trường WMI sai. Task 3 đề xuất smoke gate mỗi PR,
-> full suite nightly, trade-off chi phí và false alarm."
-
----
-
-## 8. Part 7 — Agent Skill demo (6:40–7:40)
-
-**Màn hình:** VS Code mở `skills/jmeter-perf-testing/SKILL.md` + terminal chạy analyze.
+**Màn hình:** Chrome tab GitHub Issues; VS Code mở `Task2_AI_Analysis.md` và flow chart.
 
 **Thao tác:**
+1. Tab GitHub Issues → chỉ 8 issue, nhấn mạnh #7 (SQL injection) và #8 (auth).
+2. VS Code `Task2_AI_Analysis.md` → chỉ bảng feasible / cần thêm dữ liệu / không khả thi / hallucinated.
+3. Chỉ đoạn AI bịa nội dung JMX và đoạn AI suy CPU throttle từ WMI.
+4. Mở `docs\task3_continuous_testing.md` và `docs\task3_flow.svg` → chỉ flow chart.
 
-1. Mở `skills\jmeter-perf-testing\SKILL.md` → chỉ workflow, references, templates.
-2. Terminal: `python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl results\load\23120372_Load_20261116.jtl`
-3. Mở `analysis\load_summary.md` → chỉ per-label p95 và error code.
-4. Chỉ `skills\jmeter-perf-testing\scripts\generate_jmx.py` trong tree.
+**Lời thoại:**
 
-**Narration:**
-
-> "Skill đóng gói toàn bộ quy trình: sinh JMX, chạy scenario, monitor, phân tích JTL,
-> render report view. Demo chạy analyze trên chính file Load JTL đã nộp,
-> kết quả trỏ về file và timestamp, không invent số."
-
----
-
-## 9. Part 8 — Kết thúc (7:40–8:20)
-
-**Màn hình:** README.md (bảng self-assessment) + repo GitHub.
-
-**Narration:**
-
-> "Tổng kết: Task 1 tự đánh giá 63/70, Task 2 9/10, Task 3 9/10, Agent Skill 8/10,
-> tổng 89/100; trừ điểm vì chưa có video và bài cá nhân. Repo public tại
-> github.com/tinphan247/HW05_AI_Performance. Zip tên 23120372_HW05_AI_Performance_089.zip.
-> Cảm ơn thầy/cô và các bạn đã theo dõi."
+> "Em tìm được 8 issue thật, trong đó 2 critical: search dính SQL injection và
+> endpoint product không cần authentication. Ở Task 2, AI đọc số rất tốt nhưng bịa nội dung
+> file JMX và suy ra CPU throttle từ một trường WMI không đáng tin. Task 3 đề xuất smoke gate
+> mỗi PR, full suite nightly, có phân tích trade-off chi phí và false alarm."
 
 ---
 
-## Checklist sau khi quay
+## Cảnh 8 - Demo Agent Skill (6:45-7:45)
 
-- [ ] Thời lượng ≥ 6:00 (đếm từ OBS).
-- [ ] Có ít nhất 1 đoạn ≥ 30 s cùng frame **JMeter + Task Manager**.
+**Màn hình:** VS Code mở `skills\jmeter-perf-testing\SKILL.md`; terminal bên cạnh.
+
+**Thao tác:**
+1. Chỉ cấu trúc skill: `SKILL.md`, `references/`, `templates/`, `scripts/`.
+2. Mở `references/evidence-checklist.md` → chỉ checklist bằng chứng.
+3. Chạy:
+   ```powershell
+   python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl results\load\23120372_Load_20261116.jtl
+   ```
+4. Mở `analysis\load_summary.md` → chỉ bảng per-label p95 và error code.
+5. Chỉ `skills\jmeter-perf-testing\scripts\generate_jmx.py` trong cây thư mục.
+
+**Lời thoại:**
+
+> "Skill đóng gói toàn bộ quy trình: sinh JMX, chạy scenario, monitor tài nguyên,
+> phân tích JTL và render report view. Demo chạy analyze trên chính file Load JTL đã nộp;
+> kết quả trỏ về file và timestamp, không tự bịa số."
+
+---
+
+## Cảnh 9 - Kết thúc (7:45-8:15)
+
+**Màn hình:** VS Code `README.md` phần self-assessment + tab GitHub repo.
+
+**Thao tác:**
+1. Chỉ bảng self-assessment: 27 + 18 + 18 + 9 + 9 + 8 = 89.
+2. Chỉ dòng ghi chú video và lý do trừ điểm.
+3. Chỉ repo `github.com/tinphan247/HW05_AI_Performance`.
+
+**Lời thoại:**
+
+> "Tổng kết: Task 1 tự đánh giá 63 trên 70, Task 2 9 trên 10, Task 3 9 trên 10,
+> Agent Skill 8 trên 10, tổng 89 trên 100. Repo public tại
+> github.com/tinphan247/HW05_AI_Performance. File nộp tên
+> 23120372_HW05_AI_Performance_089.zip. Cảm ơn thầy cô và các bạn đã theo dõi."
+
+---
+
+# PHẦN C - CHECKLIST SAU KHI QUAY
+
+- [ ] Video dài **≥ 6:00** (đếm trong OBS/YouTube).
+- [ ] Có ít nhất **30 giây** thấy JMeter + Task Manager cùng frame.
 - [ ] Giọng tiếng Việt của bạn, không TTS.
-- [ ] Hostname **DESKTOP-BCS88BQ** xuất hiện rõ.
-- [ ] Không có thông báo riêng tư, email, token.
+- [ ] Hostname **DESKTOP-BCS88BQ** hiện rõ.
+- [ ] Không lộ email, token, thông báo riêng tư.
 - [ ] Upload **Unlisted**, copy link.
 - [ ] Dán link vào `README.md` (mục Demo video) và `Main_Report.md` mục 8.
-- [ ] Tạo lại `reports/Main_Report.pdf`, commit/push, tạo lại zip.
+- [ ] Chạy lại `python scripts\md_to_pdf.py Main_Report.md --out reports\Main_Report.pdf`.
+- [ ] Commit/push, tạo lại zip bằng `python scripts\make_submission_zip.py --out 23120372_HW05_AI_Performance_089.zip`.
 
-## Ghi chú trung thực
+---
 
-- Live run ở Part 4 chỉ là **demo pipeline** (5 VUs, 60 s), **không** phải run chính thức;
-  run chính thức là các file `.jtl` 10–15 phút trong `results/`. Phải nói rõ điều này trong narration
-  để không bị hiểu là thay thế bằng chứng.
-- Nếu backend chưa chạy thì seed sẽ fail; luôn start backend trước.
-- Nếu port 3100 bị chiếm, kill process cũ trước khi quay (`netstat -ano | findstr :3100`).
-- Nếu OBS không quay được âm thanh, dùng Game Bar (Win+G) hoặc ffmpeg; kiểm tra micro trước.
-- Nếu PowerShell báo `Unknown arg: .csv`, nguyên nhân là gọi `jmeter.bat` trực tiếp với
-  `-Jcsv=data/e2e_data.csv`. Dùng `cmd /c` và đường dẫn `data\e2e_data.csv` như lệnh mẫu.
-- Không nói số liệu không có trong manifest; mở file và đọc trực tiếp.
+# PHẦN D - LỖI ĐÃ GẶP KHI CHẠY THỬ 23/11 VÀ CÁCH SỬA
+
+## D1. `Unknown arg: .csv`
+
+**Hiện tượng:** gọi trực tiếp `C:\...\jmeter.bat ... -Jcsv=data/e2e_data.csv` trong PowerShell,
+JMeter báo:
+
+```
+Setting JMeter property: csv=data/e2e_data
+An error occurred: Unknown arg: .csv
+```
+
+**Nguyên nhân:** PowerShell tách tham số `-Jcsv=data/e2e_data.csv` không đúng khi gọi file `.bat`.
+
+**Cách đúng:**
+
+```powershell
+cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -n -t test-plans\23120372_Load_20261116.jmx -l results\video_demo\video_load.jtl -j results\video_demo\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
+```
+
+Dùng `cmd /c` và đường dẫn **`data\e2e_data.csv`** (backslash).
+
+## D2. JMeter GUI lưu đè JMX
+
+**Hiện tượng:** sau khi mở/save trong GUI, SHA-256 của `23120372_Load_20261116.jmx` khác
+manifest của run chính thức (`530985...`), vì GUI thêm/xóa thuộc tính XML.
+
+**Cách sửa:**
+1. Không bấm Save/Ctrl+S trên JMX chính thức.
+2. Nếu cần listener, chọn **Don't Save** khi đóng, hoặc **Save As** `test-plans\video_demo.jmx`.
+3. Khôi phục bản gốc nếu lỡ lưu:
+   ```powershell
+   git checkout -- test-plans\23120372_Load_20261116.jmx
+   ```
+4. Kiểm tra hash khớp manifest:
+   ```powershell
+   python -c "import hashlib,pathlib; print(hashlib.sha256(pathlib.Path(r'test-plans/23120372_Load_20261116.jmx').read_bytes()).hexdigest())"
+   ```
+   Phải ra `530985258d2e8b0aec1e0a11247a83a5997c3b9c3cd78d32e9f0e8f6e66ac801`.
+   Nếu ra hash khác do CRLF, chuyển file về LF (đã có `.gitattributes` khóa `*.jmx`).
+
+## D3. Port 3100 bận
+
+```powershell
+Get-NetTCPConnection -LocalPort 3100 -State Listen
+Stop-Process -Id (Get-NetTCPConnection -LocalPort 3100 -State Listen).OwningProcess -Force
+```
+
+## D4. Seed xong nhưng counts sai
+
+- Phải **start backend trước**, đợi `Server is running...` rồi mới seed.
+- Nếu orders khác 0: restart backend (không chỉ reset), rồi seed lại.
+
+## D5. JMeter GUI chạy 30 VUs thay vì 5
+
+- Quên `-Jthreads=5 -Jramp=10 -Jduration=60` khi mở GUI.
+- Đóng JMeter, chạy lại đúng lệnh ở A5 bước 5.
+
+## D6. Monitor không ghi được CSV
+
+- Kiểm tra backend đang listen port 3100.
+- Chạy PowerShell **as Administrator** nếu psutil bị `AccessDenied`.
+- Dừng monitor bằng **Ctrl+C**, không đóng cửa sổ bằng nút X (có thể mất sample cuối).
+
+---
+
+# PHẦN E - GHI CHÚ TRUNG THỰC
+
+- Cảnh 5 là **demo pipeline** 5 VUs / 60 s, **không phải** run chính thức. Phải nói rõ trong
+  narration để không bị hiểu là thay thế bằng chứng.
+- Run chính thức là các file `.jtl` 10-15 phút trong `results/`; không sửa, không đổi tên,
+  không chỉnh nội dung.
+- Không đọc số liệu không có trong manifest/`.jtl`. Mở file và đọc trực tiếp.
+- Không dùng video của bài khác; không dùng TTS.
