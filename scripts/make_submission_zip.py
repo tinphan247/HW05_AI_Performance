@@ -25,6 +25,8 @@ EXCLUDE_DIRS = {
     "__pycache__",
     ".pytest_cache",
     "pilot",
+    "video_demo",
+    "video_demo2",
 }
 EXCLUDE_SUFFIXES = {".pyc", ".tmp", ".bak"}
 EXCLUDE_FILES = {"2026.HW05.Performance Testing_En.pdf"}

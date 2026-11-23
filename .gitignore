@@ -6,6 +6,7 @@ experiments/tmp/
 .env
 2026.HW05.Performance Testing_En.pdf
 results/pilot/
+results/video_demo/
 tools/jtl_viewer/classes/
 __pycache__/
 *.pyc
