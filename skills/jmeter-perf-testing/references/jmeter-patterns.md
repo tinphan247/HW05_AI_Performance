@@ -80,6 +80,12 @@ Use the extracted `${token}` in a Header Manager (`Authorization: Bearer ${token
 -Jthreads=30 -Jramp=60 -Jduration=600
 ```
 
+> On Windows, `cmd` splits an **unquoted** argument at the dot, so
+> `-Jcsv=data/e2e_data.csv` becomes `-Jcsv=data/e2e_data` + `.csv` and JMeter fails with
+> `Unknown arg: .csv`. Either omit `-Jcsv` (the plan already defaults to
+> `${__P(csv,data/e2e_data.csv)}`) or quote it: `"-Jcsv=data\e2e_data.csv"`.
+> Passing args as a Python list (no shell) is unaffected.
+
 ## Common failure signatures
 
 | Symptom | Likely cause |
@@ -90,3 +96,4 @@ Use the extracted `${token}` in a Header Manager (`Authorization: Bearer ${token
 | Lockout probe returns 401,401,401 | async SQLite update race; pace attempts |
 | Transaction time much larger than child sum | parent sample includes think time |
 | Error % looks high in stress | expected negative test left in main plan |
+| `Unknown arg: .csv` on Windows | unquoted `-Jcsv=...csv` split by `cmd`; omit or quote it |

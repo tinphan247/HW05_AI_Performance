@@ -99,7 +99,8 @@ python -c "import sqlite3; c=sqlite3.connect(r'sut/eshop-sut/backend/database.sq
 python scripts\monitor_resources.py --out results\video_demo\resources.csv
 
 # 5. JMeter GUI (5 VUs, 60 s) - dùng cmd /c, KHÔNG gọi .bat trực tiếp
-cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -t test-plans\23120372_Load_20261116.jmx -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
+#    KHÔNG truyền -Jcsv: JMX đã mặc định data/e2e_data.csv
+cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -t test-plans\23120372_Load_20261116.jmx -Jhost=localhost -Jport=3100 -Jthreads=5 -Jramp=10 -Jduration=60
 
 # 6. Skill demo
 python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl results\load\23120372_Load_20261116.jtl
@@ -182,8 +183,10 @@ python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl r
 1. Mở **Terminal B** (hoặc PowerShell mới).
 2. Chạy lệnh GUI đã copy sẵn ở A5 bước 5:
    ```powershell
-   cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -t test-plans\23120372_Load_20261116.jmx -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
+   cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -t test-plans\23120372_Load_20261116.jmx -Jhost=localhost -Jport=3100 -Jthreads=5 -Jramp=10 -Jduration=60
    ```
+   Lệnh này **không** có `-Jcsv` vì JMX đã mặc định `data/e2e_data.csv`; nếu buộc phải
+   truyền thì phải bọc nháy kép (xem D1).
 3. JMeter GUI mở với plan đã load.
 4. Chỉ lần lượt các node:
    - **Thread Group**: `Load - ${__P(threads,30)} VUs`
@@ -340,23 +343,48 @@ max 96 ms, backend RSS ~53 MB. Số của bạn có thể dao động; miễn `E
 
 ## D1. `Unknown arg: .csv`
 
-**Hiện tượng:** gọi trực tiếp `C:\...\jmeter.bat ... -Jcsv=data/e2e_data.csv` trong PowerShell,
-JMeter báo:
-
-```
-Setting JMeter property: csv=data/e2e_data
-An error occurred: Unknown arg: .csv
-```
-
-**Nguyên nhân:** PowerShell tách tham số `-Jcsv=data/e2e_data.csv` không đúng khi gọi file `.bat`.
-
-**Cách đúng:**
+**Hiện tượng:** chạy
 
 ```powershell
 cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -n -t test-plans\23120372_Load_20261116.jmx -l results\video_demo\video_load.jtl -j results\video_demo\jmeter.log -Jhost=localhost -Jport=3100 -Jcsv=data\e2e_data.csv -Jthreads=5 -Jramp=10 -Jduration=60
 ```
 
-Dùng `cmd /c` và đường dẫn **`data\e2e_data.csv`** (backslash).
+JMeter báo:
+
+```
+Setting JMeter property: csv=data\e2e_data
+An error occurred: Unknown arg: .csv
+```
+
+**Nguyên nhân (đã kiểm chứng bằng bat echo):** `cmd` tách tham số **không được quote**
+tại dấu chấm. File `echoargs.bat` in ra:
+
+```
+FULL: -Jhost=localhost -Jcsv=data\e2e_data .csv -Jthreads=5 -Jramp=10
+```
+
+Tức `-Jcsv=data\e2e_data.csv` bị chẻ thành hai tham số `-Jcsv=data\e2e_data` và `.csv`.
+JMeter nhận property `csv=data\e2e_data`, rồi gặp `.csv` nên báo `Unknown arg`.
+
+**Cách đúng — chọn 1 trong 2:**
+
+Cách A (khuyến nghị, ngắn nhất): **bỏ hẳn `-Jcsv`**, vì JMX đã có mặc định
+`${__P(csv,data/e2e_data.csv)}`:
+
+```powershell
+cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -n -t test-plans\23120372_Load_20261116.jmx -l results\video_demo\video_load.jtl -j results\video_demo\jmeter.log -Jhost=localhost -Jport=3100 -Jthreads=5 -Jramp=10 -Jduration=60
+```
+
+Cách B: nếu cần đổi file CSV thì **bọc nháy kép**:
+
+```powershell
+cmd /c C:\HCMUS\hk7\Testing\apache-jmeter-5.6.3\bin\jmeter.bat -n -t test-plans\23120372_Load_20261116.jmx -l results\video_demo\video_load.jtl -j results\video_demo\jmeter.log -Jhost=localhost -Jport=3100 "-Jcsv=data\e2e_data.csv" -Jthreads=5 -Jramp=10 -Jduration=60
+```
+
+Đã kiểm chứng cả hai cách: đều chạy, `Err: 0 (0.00%)`, `.jtl` có sample thật.
+Lưu ý: `-Jhost`, `-Jport`, `-Jthreads`, `-Jramp`, `-Jduration` **không** chứa dấu chấm
+nên không cần quote. Khi chạy bằng `run_scenario.py` (Python truyền list, không qua `cmd`)
+thì `-Jcsv=data/e2e_data.csv` vẫn đúng — lỗi này chỉ xảy ra khi gõ tay qua `cmd`/PowerShell.
 
 ## D2. JMeter GUI lưu đè JMX
 
