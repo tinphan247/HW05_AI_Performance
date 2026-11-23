@@ -7,6 +7,10 @@ trong cùng một frame**.
 
 > Tài liệu này là hướng dẫn thao tác từng bước. Cứ làm tuần tự từ trên xuống, không cần nhớ gì.
 > Các số trong ngoặc là thời lượng mục tiêu; tổng ~8:15.
+>
+> **Đang dùng bản rút gọn 6:10?** Mở `record\cue_sheet.md` (hoặc `record\cue_sheet.pdf` trên
+> điện thoại). File đó là bản quay chính, đã cắt lời thoại nhưng giữ đủ mọi mục bắt buộc.
+> File này giữ lại làm bản tham chiếu đầy đủ.
 
 ---
 
