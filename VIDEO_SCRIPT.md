@@ -150,6 +150,11 @@ python skills\jmeter-perf-testing\scripts\analyze_jtl.py --scenario load --jtl r
 3. Chỉ các node: Thread Group, CSV Data Set Config, 7 request, Gaussian Random Timer, JSON Extractor, Response Assertion.
 4. Chỉ 3 report view đã dùng: Summary Report (Load), Aggregate Report (Stress), View Results Tree (Spike) — qua ảnh `screenshots/report_views/*.png`.
 
+> **Tuyệt đối không bấm Save / Ctrl+S trên JMX chính thức.** JMeter GUI sẽ thêm/xóa thuộc
+> tính và làm SHA-256 khác manifest của run thật. Nếu cần thêm listener để quay, dùng
+> **File → Save As** thành `test-plans\video_demo.jmx`, hoặc thêm listener rồi chọn
+> **Don't Save** khi đóng. Đã có `.gitattributes` khóa `*.jmx` về LF để tránh lệch hash.
+
 **Narration:**
 
 > "Workflow end-to-end: login, products, search, product detail, cart, checkout, my-orders.

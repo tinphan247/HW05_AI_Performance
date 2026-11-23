@@ -1,0 +1,4 @@
+# Preserve exact bytes for evidence files whose SHA-256 is recorded in manifests.
+*.jmx text eol=lf
+*.jtl -text
+*.csv -text
