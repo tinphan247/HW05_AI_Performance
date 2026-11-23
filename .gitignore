@@ -10,3 +10,4 @@ results/video_demo/
 tools/jtl_viewer/classes/
 __pycache__/
 *.pyc
+/jmeter.log
